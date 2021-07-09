@@ -1,0 +1,35 @@
+{
+  "name": "white-tower",
+  "version": "1.0.0",
+  "description": "white-tower",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cbdyzj/white-tower.git"
+  },
+  "keywords": [],
+  "author": "cbdyzj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cbdyzj/white-tower/issues"
+  },
+  "homepage": "https://github.com/cbdyzj/white-tower#readme",
+  "dependencies": {
+    "next": "11.0.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-is": "^17.0.2",
+    "styled-components": "^5.3.0"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.13.2",
+    "eslint": "7.30.0",
+    "eslint-config-next": "11.0.1"
+  }
+}
