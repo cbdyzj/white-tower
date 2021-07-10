@@ -5,13 +5,16 @@ export default class WhiteTowerDocument extends Document {
 
     static async getInitialProps(ctx) {
         const sheet = new ServerStyleSheet()
-        const _renderPage = ctx.renderPage
 
         try {
-            ctx.renderPage = () => {
+            const _renderPage = ctx.renderPage
+            ctx.renderPage = function () {
                 return _renderPage({
-                    enhanceApp: (App) => (props) =>
-                        sheet.collectStyles(<App {...props} />),
+                    enhanceApp(App) {
+                        return function (props) {
+                            return sheet.collectStyles(<App {...props} />)
+                        }
+                    },
                 })
             }
 
