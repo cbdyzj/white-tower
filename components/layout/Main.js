@@ -17,7 +17,7 @@ const MainContainer = styled.main`
     width: 270px;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 980px) {
     & > aside {
       display: none;
     }

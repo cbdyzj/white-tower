@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import Image from 'next/image'
-import Button from './Button'
-import SpanNo from './SpanNo'
-import { getTimeDurationText } from '../utils/time'
+import Button from '../Button'
+import SpanNo from '../SpanNo'
+import { getTimeDurationText } from '../../utils/time'
 
 const TopicReplyListItemContainer = styled.div`
   display: flex;

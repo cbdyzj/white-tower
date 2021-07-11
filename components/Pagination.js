@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Button from './Button'
+import { useState } from 'react'
 
 const PaginationContainer = styled.div`
   display: flex;
@@ -7,7 +8,7 @@ const PaginationContainer = styled.div`
   justify-content: space-between;
   padding: 10px;
 
-  & > .page-number {
+  & > .page-index {
     display: flex;
     gap: 4px;
 
@@ -27,6 +28,15 @@ const PaginationContainer = styled.div`
     & > .ellipsis {
       color: #ccc;
     }
+
+    & > .page-index-input {
+      color: #ccc;
+
+      &:focus {
+        color: #666;
+        border: 1px solid #ccc;
+      }
+    }
   }
 
   & > .page-button {
@@ -42,17 +52,39 @@ const PaginationContainer = styled.div`
 
 export default function Pagination(props) {
 
-
     const p1 = [1, 2, 3]
     const p2 = 10
 
+    const [pageIndex, setPageIndex] = useState('1')
+
+    function handleKeyDown(ev) {
+        if (ev.code !== 'Enter') {
+            return
+        }
+        location.reload()
+    }
+
+    function handleInputChange(ev) {
+        const target = ev.target
+        target.focus()
+        const val = Number(target.value)
+        if (!val || val < 0) {
+            return
+        }
+        setPageIndex(target.value)
+    }
+
     return (
         <PaginationContainer className={props.className}>
-            <div className="page-number">
+            <div className="page-index">
                 {p1.map(it => (<Button key={it}>{it}</Button>))}
                 <span className="ellipsis">...</span>
                 <Button>{p2}</Button>
-                <input type="number"/>
+                <input className="page-index-input"
+                       type="number"
+                       value={pageIndex}
+                       onChange={handleInputChange}
+                       onKeyDown={handleKeyDown}/>
             </div>
             <div className="page-button">
                 <Button>上一页</Button>

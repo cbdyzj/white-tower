@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { getTimeDurationText } from '../utils/time'
+import { getTimeDurationText } from '../../utils/time'
 import Image from 'next/image'
-import Button from './Button'
+import Button from '../Button'
 
 const TopicContentContainer = styled.div`
   border-radius: 2px;

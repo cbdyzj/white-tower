@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Button from './Button'
+import Button from '../Button'
 
 const NodeCardContainer = styled.div`
   padding: 10px;

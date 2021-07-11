@@ -61,7 +61,7 @@ export default function TopicListItem(props) {
     const replied = item.replyCount > 0
 
     return (
-        <TopicListItemContainer className="topic-item">
+        <TopicListItemContainer className={props.className}>
             <a href={postUserLink}>
                 <Image src={item.postUserAvatarUrl} width={48} height={48}/>
             </a>

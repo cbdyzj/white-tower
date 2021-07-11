@@ -1,50 +1,31 @@
-import Layout from '../components/Layout/Layout'
+import Layout from '../components/layout/Layout'
+import Aside from '../components/layout/Aside'
+
 import t from '../i18n/t'
-import styled from 'styled-components'
 
-const TitleContainer = styled.div`
-  position: relative;
-  text-align: center;
+import topic_list from '../__test_data__/topic_list'
+import user_data from '../__test_data__/user_data'
+import IndexTopicList from '../components/index/IndexTopicList'
 
-  & > div.content {
-
-    position: relative;
-    top: 25vh;
-
-    & > span.title {
-      font-weight: 600;
-      font-size: 72px;
-      letter-spacing: -0.5px;
-      background: linear-gradient(90deg, #f87171, #4ade80, #60a5fa);
-      -webkit-background-clip: text;
-      //noinspection CssInvalidPropertyValue
-      background-clip: text;
-      color: transparent;
-    }
-
-    & > span.subtitle {
-      font-weight: 600;
-      opacity: .7;
-    }
-  }
-`
-
-/**
- * 白塔阅读 - 首页
- */
 export default function Index(props) {
 
     const title = `${t.WHITE_TOWER_READING} - ${t.HOME_PAGE}`
+    const userData = props.userData
+    const topicList = props.topicList
 
     return (
-        <Layout title={title}>
-            <TitleContainer>
-                <div className="content">
-                    <span className="title">{t.WHITE_TOWER_READING}</span>
-                    <br/>
-                    <span className="subtitle text-3xl">施工中...</span>
-                </div>
-            </TitleContainer>
+        <Layout title={title} aside={<Aside userData={userData}/>}>
+            <IndexTopicList topicList={topicList}/>
         </Layout>
     )
+}
+
+export async function getServerSideProps(ctx) {
+
+    return {
+        props: {
+            topicList: topic_list,
+            userData: user_data,
+        },
+    }
 }

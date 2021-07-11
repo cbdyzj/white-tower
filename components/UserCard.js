@@ -42,6 +42,10 @@ const UserCardContainer = styled.div`
         flex-direction: column;
         align-items: center;
 
+        :nth-child(2) {
+          border-left: 1px solid rgba(100, 100, 100, 0.4);
+          border-right: 1px solid rgba(100, 100, 100, 0.4);
+        }
 
         & > .count {
           color: #808080;

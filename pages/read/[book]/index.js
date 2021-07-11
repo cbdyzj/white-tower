@@ -1,6 +1,6 @@
-import Layout from '../../components/Layout/Layout'
+import Layout from '../../../components/layout/Layout'
 
-export default function Book(props) {
+export default function Index(props) {
 
     const bookId = props.bookId
 
