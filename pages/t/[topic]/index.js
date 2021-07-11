@@ -1,7 +1,7 @@
 import Layout from '../../../components/layout/Layout'
 import Aside from '../../../components/layout/Aside'
 import TopicContent from '../../../components/topic/TopicContent'
-import TopicReplyInput from '../../../components/topic/TopicReplyInput'
+import ReplyTopicInput from '../../../components/topic/ReplyTopicInput'
 import TopicReply from '../../../components/topic/TopicReply'
 
 import topic_1 from '../../../__test_data__/topic_1'
@@ -18,14 +18,14 @@ export default function Index(props) {
         <Layout title={title} aside={<Aside userData={userData}/>}>
             <TopicContent topic={topic}/>
             <TopicReply topic={topic}/>
-            <TopicReplyInput/>
+            <ReplyTopicInput/>
         </Layout>
     )
 }
 
 export async function getServerSideProps(ctx) {
-    const { topic } = ctx.query
-    const topicId = topic
+
+    const topicId = ctx.query.topic
 
     return {
         props: {

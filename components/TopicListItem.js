@@ -72,7 +72,7 @@ export default function TopicListItem(props) {
                 <div className="text-xs">
                     {props.showNodeLabel && (
                         <>
-                            <LightLink href={'/go/' + item.node}>{item.node}</LightLink>
+                            <LightLink href={'/go/' + item.nodeCode}>{item.nodeName}</LightLink>
                             <span className="text-light-gray">&nbsp;&nbsp;•&nbsp;&nbsp;</span>
                         </>
                     )}

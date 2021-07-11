@@ -14,7 +14,7 @@ const TopicReplyInputContainer = styled.div`
     padding: 10px;
   }
 
-  & > .input-form {
+  & > .input-area {
     padding: 10px;
 
     & > textarea {
@@ -39,7 +39,7 @@ const TopicReplyInputContainer = styled.div`
 `
 
 
-export default function TopicReplyInput(props) {
+export default function ReplyTopicInput(props) {
 
     function handleInput(ev) {
         const target = ev.target
@@ -48,14 +48,14 @@ export default function TopicReplyInput(props) {
     }
 
     return (
-        <TopicReplyInputContainer className="text-sm">
+        <TopicReplyInputContainer as="form" className="text-sm">
             <div className="header">
                 <span>添加一条新回复</span>
                 <Button as="a">回到顶部</Button>
             </div>
-            <form className="input-form top-divider-line">
+            <div className="input-area top-divider-line">
                 <textarea className="text-sm" onChange={handleInput}/>
-            </form>
+            </div>
             <div className="footer top-divider-line">
                 <Button className="font-medium text-sm">回复</Button>
                 <span className="text-gray">请尽量让自己的回复能够对别人有帮助</span>

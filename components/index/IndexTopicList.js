@@ -7,7 +7,7 @@ const IndexTopicListContainer = styled.div`
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0) 0 0 0 0, rgba(0, 0, 0, 0) 0 0 0 0, rgba(0, 0, 0, 0.1) 0 1px 3px 0, rgba(0, 0, 0, 0.06) 0 1px 2px 0;
 
-  & > .node-line {
+  & > .tab-line {
     padding: 10px;
     display: flex;
     gap: 5px;
@@ -34,17 +34,20 @@ const IndexTopicListContainer = styled.div`
     }
   }
 
+  & > .node-line {
+    padding: 10px;
+    background-color: #F9F9F9;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    & > a {
+      margin: 0 10px;
+    }
+  }
+
   & > .additional {
     padding: 10px;
-
-
-    & > .recent-link {
-      color: #778087;
-
-      &:hover {
-        color: #fff;
-      }
-    }
   }
 `
 
@@ -54,7 +57,7 @@ export default function IndexTopicList(props) {
 
     return (
         <IndexTopicListContainer>
-            <div className="node-line text-sm">
+            <div className="tab-line text-sm">
                 <a className="current" href={'/?tab=read'}>读书</a>
                 <a href={'/?tab=read'}>奇幻</a>
                 <a href={'/?tab=read'}>都市</a>
@@ -62,6 +65,11 @@ export default function IndexTopicList(props) {
                 <a href={'/?tab=read'}>游戏</a>
                 <a href={'/?tab=read'}>悬疑</a>
                 <a href={'/?tab=read'}>轻小说</a>
+            </div>
+            <div className="node-line text-sm">
+                <Button as="a">诡秘之主</Button>
+                <Button as="a">诡秘：从阅读者开始</Button>
+                <Button as="a">克苏鲁的呼唤</Button>
             </div>
             {topicList.map(it => (
                     <TopicListItem key={it.topicId}
@@ -72,7 +80,7 @@ export default function IndexTopicList(props) {
             )}
             <div className="additional top-divider-line text-sm">
                 <span>»&nbsp;</span>
-                <Button as="a" className="recent-link">更多新主题</Button>
+                <Button as="a" href={'/recent'}>更多新主题</Button>
             </div>
         </IndexTopicListContainer>
     )

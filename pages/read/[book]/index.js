@@ -14,10 +14,12 @@ export default function Index(props) {
 }
 
 export async function getServerSideProps(ctx) {
-    const { book } = ctx.query
+
+    const bookId = ctx.query.book
+
     return {
         props: {
-            bookId: book,
+            bookId,
         },
     }
 }

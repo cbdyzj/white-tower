@@ -78,7 +78,7 @@ export default function TopicContent(props) {
                 <span>
                     <Button as="a" href={'/'}>白塔阅读</Button>
                     &nbsp;&nbsp;›&nbsp;&nbsp;
-                    <span>{topic.node}</span>
+                    <Button as="a" href={'/go/' + topic.nodeCode}>{topic.nodeName}</Button>
                 </span>
                 <h1 className="title">{topic.title}</h1>
                 <div className="post-statistics text-xs text-gray">

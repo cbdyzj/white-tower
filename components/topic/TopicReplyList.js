@@ -1,5 +1,5 @@
-import TopicReplyListItem from './TopicReplyListItem'
 import styled from 'styled-components'
+import TopicReplyListItem from './TopicReplyListItem'
 import Pagination from '../Pagination'
 
 const TopicReplyListContainer = styled.div`
