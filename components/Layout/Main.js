@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const MainContainer = styled.main`
   display: flex;
   gap: 20px;
-  min-height: calc(100vh - 44px - 100px);
+  min-height: calc(100vh - 48px - 100px);
   max-width: 1080px;
   margin: 0 auto;
   padding: 20px;
@@ -25,6 +25,7 @@ const MainContainer = styled.main`
 `
 
 export default function Main(props) {
+
     return (
         <MainContainer>
             <section>{props.children}</section>

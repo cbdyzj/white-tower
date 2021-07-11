@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import Footer from './Footer'
-import t from '../../i18n/t'
 import Nav from './Nav'
 import Main from './Main'
+import t from '../../i18n/t'
 
 export default function Layout(props) {
 

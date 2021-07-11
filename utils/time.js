@@ -2,8 +2,11 @@ export function getTimeDurationText(time) {
     const date = new Date(time)
     const now = new Date()
     const duration = Math.round((now.getTime() - date.getTime()) / 1000)
-    if (duration < 60) {
+    if (duration < 15) {
         return '刚刚'
+    }
+    if (duration < 60) {
+        return duration + '秒前'
     }
     if (duration < 60 * 60) {
         const minutes = Math.round(duration / 60)

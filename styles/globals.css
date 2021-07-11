@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+/* reset global style */
+
 html,
 body {
     padding: 0;
@@ -18,6 +20,9 @@ a {
     box-sizing: border-box;
 }
 
-#__next {
+/* background color */
+
+body > div:first-child {
     background-color: #fafafa;
 }
+
