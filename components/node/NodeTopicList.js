@@ -1,4 +1,4 @@
-import Pagination from '../Pagination'
+import Pagination from '../../components2/Pagination'
 import TopicListItem from '../TopicListItem'
 import styled from 'styled-components'
 
@@ -22,12 +22,12 @@ export default function NodeTopicList(props) {
 
     return (
         <NodeTopicListContainer>
-            <Pagination/>
+            <Pagination pageIndex={7} pageTotal={120}/>
             {topicList.map(it => (
-                <TopicListItem key={it.topicId} className="top-divider-line" item={it}/>)
+                <TopicListItem key={it.topicId} className="top-border" item={it}/>)
             )}
-            <Pagination className="top-divider-line"/>
-            <div className="summary top-divider-line text-sm">
+            <Pagination className="top-border" pageIndex={7} pageTotal={120}/>
+            <div className="summary top-border text-sm">
                 <span className="text-gray">第 1 到 20 / 共 34161 个主题</span>
                 <span>4529 人收藏了这个节点</span>
             </div>

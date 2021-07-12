@@ -4,14 +4,6 @@
     display: none;
 }
 
-.line-clamp-3 {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    /* noinspection CssUnknownProperty */
-    -webkit-line-clamp: 3;
-    overflow: hidden;
-}
-
-.top-divider-line {
+.top-border {
     border-top: 1px solid #e2e2e2;
 }

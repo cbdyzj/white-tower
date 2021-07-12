@@ -3,8 +3,8 @@ import NodeCard from '../../../components/node/NodeCard'
 import Aside from '../../../components/layout/Aside'
 import NodeTopicList from '../../../components/node/NodeTopicList'
 
-import topic_list from '../../../__test_data__/topic_list'
-import user_data from '../../../__test_data__/user_data'
+import topic_list from '../../../__test_data/topic_list'
+import user_data from '../../../__test_data/user_data'
 import NewTopicInput from '../../../components/node/NewTopicInput'
 
 export default function Index(props) {

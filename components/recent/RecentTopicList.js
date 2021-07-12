@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Pagination from '../Pagination'
+import Pagination from '../../components2/Pagination'
 import TopicListItem from '../TopicListItem'
 import Button from '../Button'
 
@@ -30,11 +30,11 @@ export default function RecentTopicList(props) {
                 </div>
                 <div className="text-light-gray text-xs">共 788898 个主题</div>
             </div>
-            <Pagination className="top-divider-line"/>
+            <Pagination className="top-border" pageIndex={6} pageTotal={120}/>
             {topicList.map(it => (
-                <TopicListItem key={it.topicId} className="top-divider-line" item={it}/>)
+                <TopicListItem key={it.topicId} className="top-border" item={it}/>)
             )}
-            <Pagination className="top-divider-line"/>
+            <Pagination className="top-border" pageIndex={6} pageTotal={120}/>
         </RecentTopicListContainer>
     )
 }

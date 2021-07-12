@@ -45,7 +45,7 @@ export default function NodeCard(props) {
                     分享你看到的有趣的，好玩儿，欢迎从这里获取灵感。
                 </div>
             </div>
-            <div className="footer top-divider-line">
+            <div className="footer top-border">
                 <Button className="font-medium text-sm">创建新主题</Button>
                 <Button className="text-xs">加入收藏</Button>
             </div>

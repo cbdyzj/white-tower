@@ -53,10 +53,10 @@ export default function ReplyTopicInput(props) {
                 <span>添加一条新回复</span>
                 <Button as="a">回到顶部</Button>
             </div>
-            <div className="input-area top-divider-line">
+            <div className="input-area top-border">
                 <textarea className="text-sm" onChange={handleInput}/>
             </div>
-            <div className="footer top-divider-line">
+            <div className="footer top-border">
                 <Button className="font-medium text-sm">回复</Button>
                 <span className="text-gray">请尽量让自己的回复能够对别人有帮助</span>
             </div>

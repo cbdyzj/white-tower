@@ -73,12 +73,12 @@ export default function IndexTopicList(props) {
             </div>
             {topicList.map(it => (
                     <TopicListItem key={it.topicId}
-                                   className="top-divider-line"
+                                   className="top-border"
                                    showNodeLabel
                                    item={it}/>
                 )
             )}
-            <div className="additional top-divider-line text-sm">
+            <div className="additional top-border text-sm">
                 <span>»&nbsp;</span>
                 <Button as="a" href={'/recent'}>更多新主题</Button>
             </div>

@@ -65,10 +65,10 @@ export default function NewTopicInput(props) {
                 <input type="text" placeholder="请输入主题标题，如果标题能够表达完整内容，则正文可以为空"/>
                 <textarea className="text-sm" onChange={handleInput} placeholder="正文"/>
             </div>
-            <div className="footer top-divider-line">
+            <div className="footer top-border">
                 <Button className="font-medium text-sm">创建新主题</Button>
             </div>
-            <div className="additional text-sm top-divider-line">
+            <div className="additional text-sm top-border">
                 <Button as="a">忽略这个节点</Button>
                 <span>&nbsp;&nbsp;</span>
                 <span>被忽略的节点中的主题将不会在首页出现</span>

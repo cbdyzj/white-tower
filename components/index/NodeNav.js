@@ -27,7 +27,7 @@ export default function NodeNav(props) {
                 <Button as="span">浏览全部节点</Button>
             </div>
             {nodeNavList.map(it => (
-                <NodeNavItem className="top-divider-line" key={it.title} nodeNav={it}/>
+                <NodeNavItem className="top-border" key={it.title} nodeNav={it}/>
             ))}
         </NodeNavContainer>
     )

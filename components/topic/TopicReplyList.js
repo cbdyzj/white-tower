@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import TopicReplyListItem from './TopicReplyListItem'
-import Pagination from '../Pagination'
+import Pagination from '../../components2/Pagination'
 
 const TopicReplyListContainer = styled.div`
 
@@ -18,7 +18,7 @@ export default function TopicReplyList(props) {
             {topic.replyList.map((it, index) => (
                 <TopicReplyListItem key={it.replyId} no={index + 1} item={it}/>
             ))}
-            <Pagination className="top-divider-line"/>
+            <Pagination className="top-border" pageIndex={6} pageTotal={120}/>
         </TopicReplyListContainer>
     )
 }

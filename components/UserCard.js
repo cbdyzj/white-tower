@@ -123,11 +123,11 @@ export default function UserCard(props) {
                 </div>
             </div>
 
-            <div className="new-topic top-divider-line">
+            <div className="new-topic top-border">
                 <Button className="text-sm">创作新主题</Button>
             </div>
 
-            <div className="additional top-divider-line text-sm">
+            <div className="additional top-border text-sm">
                 <a className="unread-message-count" href={'/notifications'}>
                     {userData.unreadMessageCount} 条未读提醒
                 </a>

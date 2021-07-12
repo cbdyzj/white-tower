@@ -1,7 +1,7 @@
 import Layout from '../components/layout/Layout'
 
-import topic_list from '../__test_data__/topic_list'
-import user_data from '../__test_data__/user_data'
+import topic_list from '../__test_data/topic_list'
+import user_data from '../__test_data/user_data'
 import Aside from '../components/layout/Aside'
 import RecentTopicList from '../components/recent/RecentTopicList'
 
