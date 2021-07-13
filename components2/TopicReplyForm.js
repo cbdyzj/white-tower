@@ -6,10 +6,8 @@ import { scrollToTop } from '../utils/scroll'
 
 const _TopicReplyForm = styled.form`
   width: 100%;
-  background-color: #fff;
-  margin-top: 20px;
   border-radius: 2px;
-  box-shadow: rgba(0, 0, 0, 0) 0 0 0 0, rgba(0, 0, 0, 0) 0 0 0 0, rgba(0, 0, 0, 0.1) 0 1px 3px 0, rgba(0, 0, 0, 0.06) 0 1px 2px 0;
+  background-color: #fff;
 
   & > .header {
     display: flex;
@@ -31,6 +29,10 @@ const _TopicReplyForm = styled.form`
       outline: none;
       padding: 6px;
       min-height: 120px;
+
+      &::placeholder {
+        color: #c0c0c0;
+      }
     }
   }
 
@@ -41,16 +43,14 @@ const _TopicReplyForm = styled.form`
     justify-content: space-between;
 
     & > button {
-      padding-left: .5rem;
-      padding-right: .5rem;
+      padding-left: 10px;
+      padding-right: 10px;
     }
   }
 
   & > .additional {
     padding: 10px;
-    display: flex;
-    align-items: center;
-    flex-direction: row-reverse;
+    text-align: right;
   }
 `
 
@@ -68,7 +68,7 @@ export default function TopicReplyForm(props) {
     }
 
     return (
-        <_TopicReplyForm onSubmit={handleSubmit}>
+        <_TopicReplyForm className="shadow" onSubmit={handleSubmit}>
             <div className="header">
                 <Text.Black className="text-sm">添加一条新回复</Text.Black>
                 <TextLink onClick={scrollToTop} className="text-sm">回到顶部</TextLink>

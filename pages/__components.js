@@ -13,6 +13,8 @@ import LabelLink from '../components2/LabelLink'
 import LightLink from '../components2/LightLink'
 import NodeLink from '../components2/NodeLink'
 import TopicReplyForm from '../components2/TopicReplyForm'
+import TopicCreateForm from '../components2/TopicCreateForm'
+import UnreadReminder from '../components2/UnreadReminder'
 
 const _ComponentGallery = styled.div`
   min-height: 100vh;
@@ -31,6 +33,14 @@ export default function ComponentGallery(props) {
             </Head>
             <_ComponentGallery>
                 <h1 className="text-2xl">组件</h1>
+
+                <Demo title="UnreadReminder">
+                    <UnreadReminder count={2}/>
+                </Demo>
+
+                <Demo title="TopicCreateForm">
+                    <TopicCreateForm/>
+                </Demo>
 
                 <Demo title="TopicReplyForm">
                     <TopicReplyForm/>
