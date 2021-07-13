@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { useState } from 'react'
-import DarkLink from './DarkLink'
+import ContrastButton from './ContrastButton'
 import Text from './Text'
 
 const _Pagination = styled.div`
@@ -15,18 +15,15 @@ const _Pagination = styled.div`
     gap: 4px;
     flex-wrap: wrap;
 
-    & > input {
-      width: 52px;
-      border: 1px solid #ddd;
-      border-radius: 2px;
-      padding: 4px;
-    }
-
     & > button {
       min-width: 26px;
     }
 
     & > .page-index-input {
+      width: 52px;
+      border: 1px solid #ddd;
+      border-radius: 2px;
+      padding: 4px;
       color: #ccc;
 
       &:focus {
@@ -45,30 +42,7 @@ const _Pagination = styled.div`
 const PAGE_NUMBER_COUNT = 9
 const PAGE_NUMBER_OFFSET = 5
 
-export default function Pagination(props) {
-
-    const pageIndex = props.pageIndex
-    const pageTotal = props.pageTotal
-
-    const [pageIndexValue, setPageIndexValue] = useState(String(props.pageIndex))
-
-    function handleKeyDown(ev) {
-        if (ev.code !== 'Enter') {
-            return
-        }
-        location.reload()
-    }
-
-    function handleInputChange(ev) {
-        const target = ev.target
-        target.focus()
-        const val = Number(target.value)
-        if (!val || val < 0) {
-            return
-        }
-        setPageIndexValue(target.value)
-    }
-
+function getPageNumbers(pageIndex, pageTotal) {
     const numbers = []
 
     if (pageIndex <= PAGE_NUMBER_OFFSET) {
@@ -97,25 +71,65 @@ export default function Pagination(props) {
     }
 
     numbers.sort((a, b) => (a - b))
+    return numbers
+}
+
+
+export default function Pagination(props) {
+
+    const pageIndex = props.pageIndex
+    const pageTotal = props.pageTotal
+
+    const [pageIndexValue, setPageIndexValue] = useState(String(props.pageIndex))
+
+    function handleKeyDown(ev) {
+        if (ev.code === 'Escape') {
+            ev.target.blur()
+            return
+        }
+        if (ev.code === 'Enter' && pageIndexValue) {
+            location.reload()
+        }
+    }
+
+    function handleInputChange(ev) {
+        const target = ev.target
+        target.focus()
+        if (!target.value) {
+            setPageIndexValue('')
+            return
+        }
+        const val = Number(target.value)
+        if (val < 1 || val > pageTotal) {
+            return
+        }
+        setPageIndexValue(target.value)
+    }
+
+    const numbers = getPageNumbers(pageIndex, pageTotal)
 
     return (
         <_Pagination className={props.className}>
             <div className="page-index">
-                <DarkLink as="button" current={pageIndex === 1} size="s">1</DarkLink>
+                <ContrastButton current={pageIndex === 1} size="s">1</ContrastButton>
                 {(pageIndex > PAGE_NUMBER_OFFSET) && (pageTotal > PAGE_NUMBER_COUNT) && (
                     <Text.LightGray>...</Text.LightGray>
                 )}
-                {numbers.map(it => (<DarkLink as="button" size="s" current={pageIndex === it} key={it}>{it}</DarkLink>))}
+                {numbers.map(it => (
+                    <ContrastButton size="s" current={pageIndex === it} key={it}>{it}</ContrastButton>
+                ))}
                 {(pageIndex + PAGE_NUMBER_OFFSET <= pageTotal) && ((pageTotal > PAGE_NUMBER_COUNT)) && (
                     <Text.LightGray>...</Text.LightGray>
                 )}
-                {(pageTotal > 1) && (<DarkLink as="button" current={pageIndex === pageTotal} size="s">{pageTotal}</DarkLink>)}
+                {(pageTotal > 1) && (
+                    <ContrastButton current={pageIndex === pageTotal} size="s">{pageTotal}</ContrastButton>
+                )}
                 <input className="page-index-input" type="number" value={pageIndexValue}
                        onChange={handleInputChange} onKeyDown={handleKeyDown}/>
             </div>
             <div className="page-button">
-                <DarkLink as="button" size="s">上一页</DarkLink>
-                <DarkLink as="button" size="s">下一页</DarkLink>
+                <ContrastButton size="s">上一页</ContrastButton>
+                <ContrastButton size="s">下一页</ContrastButton>
             </div>
         </_Pagination>
     )

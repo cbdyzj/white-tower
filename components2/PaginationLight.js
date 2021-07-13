@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import DarkLink from './DarkLink'
+import ContrastButton from './ContrastButton'
 import Text from './Text'
 
 const _PaginationLight = styled.div`
@@ -17,9 +17,9 @@ export default function PaginationLight(props) {
 
     return (
         <_PaginationLight>
-            <DarkLink as="button" size="s">上一页</DarkLink>
+            <ContrastButton as="button" size="s">上一页</ContrastButton>
             <Text.LightGray className="font-bold" size="s">{pageIndex}/{pageTotal}</Text.LightGray>
-            <DarkLink as="button" size="s">下一页</DarkLink>
+            <ContrastButton as="button" size="s">下一页</ContrastButton>
         </_PaginationLight>
     )
 }

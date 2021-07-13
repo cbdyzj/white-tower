@@ -4,8 +4,14 @@ import Avatar from '../components2/Avatar'
 import Demo from '../components2/Demo'
 import Pagination from '../components2/Pagination'
 import PaginationLight from '../components2/PaginationLight'
-import DarkLink from '../components2/DarkLink'
+import ContrastButton from '../components2/ContrastButton'
 import TabButton from '../components2/TabButton'
+import CountText from '../components2/CountText'
+import CountLink from '../components2/CountLink'
+import TextLink from '../components2/TextLink'
+import LabelLink from '../components2/LabelLink'
+import LightLink from '../components2/LightLink'
+import NodeLink from '../components2/NodeLink'
 
 const _ComponentGallery = styled.div`
   min-height: 100vh;
@@ -24,6 +30,38 @@ export default function ComponentGallery(props) {
             </Head>
             <_ComponentGallery>
                 <h1 className="text-2xl">组件</h1>
+
+                <Demo title="NodeLink">
+                    <NodeLink href="#">混沌海</NodeLink>
+                    <NodeLink href="#">永暗之河</NodeLink>
+                </Demo>
+
+                <Demo title="LightLink">
+                    <LightLink href="#">0 条未读提醒</LightLink>
+                </Demo>
+                <Demo title="LabelLink">
+                    <LabelLink href="#">诡秘之主</LabelLink>
+                </Demo>
+                <Demo title="TextLink">
+                    <div className="w-full">
+                        <TextLink href="#" size="xs">佛尔思.沃尔是一名学徒途径的非凡者。她是一名塔罗会成员，代号“魔术师”</TextLink>
+                    </div>
+                    <div className="w-full">
+                        <TextLink href="#" size="s">佛尔思.沃尔是一名学徒途径的非凡者。她是一名塔罗会成员，代号“魔术师”</TextLink>
+                    </div>
+                    <div className="w-full">
+                        <TextLink href="#" size="m">佛尔思.沃尔是一名学徒途径的非凡者。她是一名塔罗会成员，代号“魔术师”</TextLink>
+                    </div>
+                    <div className="w-full">
+                        <TextLink href="#" size="m" typical>佛尔思.沃尔是一名学徒途径的非凡者。她是一名塔罗会成员，代号“魔术师”</TextLink>
+                    </div>
+                </Demo>
+                <Demo title="CountLink">
+                    <CountLink href="#">17</CountLink>
+                </Demo>
+                <Demo title="CountText">
+                    <CountText>7</CountText>
+                </Demo>
                 <Demo title="Avatar">
                     <Avatar src={'/white-tower.svg'} size="s"/>
                     <Avatar src={'/white-tower.svg'} size="m"/>
@@ -33,20 +71,12 @@ export default function ComponentGallery(props) {
                     <TabButton current>读书</TabButton>
                     <TabButton>幻想</TabButton>
                 </Demo>
-                <Demo title="DarkLink">
-                    <div>
-                        <DarkLink size="xs">链接-超小</DarkLink>
-                        &nbsp;&nbsp;
-                        <DarkLink size="s">链接-小</DarkLink>
-                        &nbsp;&nbsp;
-                        <DarkLink size="m">链接-中</DarkLink>
-                        &nbsp;&nbsp;
-                        <DarkLink current size="m">链接-中</DarkLink>
-                        &nbsp;&nbsp;
-                        <DarkLink size="l">链接-大</DarkLink>
-                        &nbsp;&nbsp;
-                        <DarkLink size="xl">链接-超大</DarkLink>
-                    </div>
+                <Demo title="ContrastButton">
+                    <ContrastButton size="xs">按钮-超小</ContrastButton>
+                    <ContrastButton size="s">按钮-小</ContrastButton>
+                    <ContrastButton size="m">按钮-中</ContrastButton>
+                    <ContrastButton size="m" current>按钮-中</ContrastButton>
+                    <ContrastButton className="font-medium" style={{ width: '100%' }} size="s">回复</ContrastButton>
                 </Demo>
                 <Demo title="Pagination">
                     <Pagination pageIndex={7} pageTotal={17}/>

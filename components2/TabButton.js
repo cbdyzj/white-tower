@@ -6,7 +6,8 @@ const _TabButton = styled.a`
   border-radius: 2px;
   cursor: pointer;
 
-  &:hover {
+  &:hover,
+  &:active {
     color: #000;
     background-color: #f5f5f5;
   }
@@ -15,7 +16,8 @@ const _TabButton = styled.a`
     background-color: #333344;
     color: #fff;
 
-    &:hover {
+    &:hover,
+    &:active {
       background-color: #445;
     }
   }

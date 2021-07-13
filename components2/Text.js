@@ -14,8 +14,9 @@ function withColor(color) {
 }
 
 const Text = {
-    Gray: withColor('#999999'),
-    LightGray: withColor('#cccccc'),
+    Black: withColor('#000'),
+    Gray: withColor('#999'),
+    LightGray: withColor('#ccc'),
 }
 
 export default Text

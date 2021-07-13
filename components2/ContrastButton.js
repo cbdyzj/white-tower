@@ -1,13 +1,16 @@
 import styled from 'styled-components'
 import { getTextSizeClass } from '../utils/text'
 
-const _DarkLink = styled.a`
-  border: none;
+const _ContrastButton = styled.button`
+  border: 1px solid #000;
+  border-radius: 2px;
+  padding: 2px 4px;
   background: none;
-  color: #778087;
+  color: #000;
   cursor: pointer;
 
-  &:hover {
+  &:hover,
+  &:active {
     color: #fff;
     background-color: #000;
   }
@@ -18,14 +21,14 @@ const _DarkLink = styled.a`
   }
 `
 
-export default function DarkLink(props) {
+export default function ContrastButton(props) {
 
     const textSizeClass = getTextSizeClass(props.size)
     const className = `${textSizeClass} ${props.current ? 'current' : ''} ${props.className || ''}`
 
     return (
-        <_DarkLink as={props.as} className={className}>
+        <_ContrastButton style={props.style} href={props.href} className={className}>
             {props.children}
-        </_DarkLink>
+        </_ContrastButton>
     )
 }
