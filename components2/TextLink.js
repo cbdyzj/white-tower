@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { getTextSizeClass } from '../utils/text'
 
 const _TextLink = styled.a`
   color: #778087;
@@ -18,11 +17,10 @@ const _TextLink = styled.a`
 
 export default function TextLink(props) {
 
-    const textSizeClass = getTextSizeClass(props.size)
-    const className = `${textSizeClass} ${props.typical ? 'typical' : ''} ${props.className || ''}`
+    const className = `${props.typical ? 'typical' : ''} ${props.className || ''}`
 
     return (
-        <_TextLink href={props.href} className={className}>
+        <_TextLink onClick={props.onClick} href={props.href} className={className}>
             {props.children}
         </_TextLink>
     )

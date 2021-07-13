@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { getTextSizeClass } from '../utils/text'
 
 const _ContrastButton = styled.button`
   border: 1px solid #000;
@@ -23,8 +22,7 @@ const _ContrastButton = styled.button`
 
 export default function ContrastButton(props) {
 
-    const textSizeClass = getTextSizeClass(props.size)
-    const className = `${textSizeClass} ${props.current ? 'current' : ''} ${props.className || ''}`
+    const className = `${props.current ? 'current' : ''} ${props.className || ''}`
 
     return (
         <_ContrastButton style={props.style} href={props.href} className={className}>

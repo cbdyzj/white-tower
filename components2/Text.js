@@ -1,15 +1,14 @@
-import { getTextSizeClass } from '../utils/text'
-
 function withColor(color) {
 
     return function (props) {
-        const textSizeClass = getTextSizeClass(props.size)
 
-        return (
-            <span style={{ color }} className={`${textSizeClass} ${props.className || ''}`}>
-                {props.children}
-            </span>
-        )
+        const style = Object.assign({}, props.style, { color })
+        props = {
+            ...props,
+            style,
+        }
+
+        return (<span {...props}/>)
     }
 }
 

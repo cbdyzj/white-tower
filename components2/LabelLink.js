@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const _NodeLink = styled.a`
+const _LabelLink = styled.a`
   display: block;
   padding: 4px;
   background-color: #f5f5f5;
@@ -17,8 +17,8 @@ const _NodeLink = styled.a`
 export default function LabelLink(props) {
 
     return (
-        <_NodeLink className="text-xs" href={props.href}>
+        <_LabelLink className="text-xs" href={props.href}>
             {props.children}
-        </_NodeLink>
+        </_LabelLink>
     )
 }

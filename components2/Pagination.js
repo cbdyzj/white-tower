@@ -111,25 +111,25 @@ export default function Pagination(props) {
     return (
         <_Pagination className={props.className}>
             <div className="page-index">
-                <ContrastButton current={pageIndex === 1} size="s">1</ContrastButton>
+                <ContrastButton current={pageIndex === 1} className="text-sm">1</ContrastButton>
                 {(pageIndex > PAGE_NUMBER_OFFSET) && (pageTotal > PAGE_NUMBER_COUNT) && (
-                    <Text.LightGray>...</Text.LightGray>
+                    <Text.LightGray className="text-base">...</Text.LightGray>
                 )}
                 {numbers.map(it => (
-                    <ContrastButton size="s" current={pageIndex === it} key={it}>{it}</ContrastButton>
+                    <ContrastButton className="text-sm" current={pageIndex === it} key={it}>{it}</ContrastButton>
                 ))}
                 {(pageIndex + PAGE_NUMBER_OFFSET <= pageTotal) && ((pageTotal > PAGE_NUMBER_COUNT)) && (
-                    <Text.LightGray>...</Text.LightGray>
+                    <Text.LightGray className="text-base">...</Text.LightGray>
                 )}
                 {(pageTotal > 1) && (
-                    <ContrastButton current={pageIndex === pageTotal} size="s">{pageTotal}</ContrastButton>
+                    <ContrastButton current={pageIndex === pageTotal} className="text-sm">{pageTotal}</ContrastButton>
                 )}
                 <input className="page-index-input" type="number" value={pageIndexValue}
                        onChange={handleInputChange} onKeyDown={handleKeyDown}/>
             </div>
             <div className="page-button">
-                <ContrastButton size="s">上一页</ContrastButton>
-                <ContrastButton size="s">下一页</ContrastButton>
+                <ContrastButton className="text-sm">上一页</ContrastButton>
+                <ContrastButton className="text-sm">下一页</ContrastButton>
             </div>
         </_Pagination>
     )
