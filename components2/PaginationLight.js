@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import LinkButton from './LinkButton'
+import DarkLink from './DarkLink'
 import Text from './Text'
 
 const _PaginationLight = styled.div`
@@ -13,13 +13,13 @@ const _PaginationLight = styled.div`
 export default function PaginationLight(props) {
 
     const pageIndex = props.pageIndex
-    const total = props.total
+    const pageTotal = props.pageTotal
 
     return (
         <_PaginationLight>
-            <LinkButton size="s">上一页</LinkButton>
-            <Text.LightGray className="font-bold" size="s">{pageIndex}/{total}</Text.LightGray>
-            <LinkButton size="s">下一页</LinkButton>
+            <DarkLink as="button" size="s">上一页</DarkLink>
+            <Text.LightGray className="font-bold" size="s">{pageIndex}/{pageTotal}</Text.LightGray>
+            <DarkLink as="button" size="s">下一页</DarkLink>
         </_PaginationLight>
     )
 }
