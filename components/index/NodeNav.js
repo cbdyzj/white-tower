@@ -8,7 +8,7 @@ const NodeNavContainer = styled.div`
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0) 0 0 0 0, rgba(0, 0, 0, 0) 0 0 0 0, rgba(0, 0, 0, 0.1) 0 1px 3px 0, rgba(0, 0, 0, 0.06) 0 1px 2px 0;
 
-  & > .header {
+  & > .head {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -22,7 +22,7 @@ export default function NodeNav(props) {
 
     return (
         <NodeNavContainer>
-            <div className="header text-sm">
+            <div className="head text-sm">
                 <span className="text-light-gray">白塔阅读 / 节点导航</span>
                 <Button as="span">浏览全部节点</Button>
             </div>

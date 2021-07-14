@@ -30,8 +30,27 @@ const _UnreadReminder = styled.a`
 
 export default function UnreadReminder(props) {
     return (
-        <_UnreadReminder className="text-sm">
+        <_UnreadReminder href={props.href} className="text-sm">
             {props.count} 条未读提醒
         </_UnreadReminder>
     )
 }
+
+const _NoUnread = styled.a`
+  display: block;
+  color: #ccc;
+  cursor: pointer;
+
+  &:hover {
+    color: #999;
+  }
+`
+
+export function NoUnread(props) {
+    return (
+        <_NoUnread  href={props.href} className="text-sm" href={props.href}>
+            0 条未读提醒
+        </_NoUnread>
+    )
+}
+

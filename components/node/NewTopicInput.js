@@ -40,7 +40,7 @@ const NewTopicInputContainer = styled.div`
     }
   }
 
-  & > .footer {
+  & > .foot {
     padding: 10px;
   }
 
@@ -65,7 +65,7 @@ export default function NewTopicInput(props) {
                 <input type="text" placeholder="请输入主题标题，如果标题能够表达完整内容，则正文可以为空"/>
                 <textarea className="text-sm" onChange={handleInput} placeholder="正文"/>
             </div>
-            <div className="footer top-border">
+            <div className="foot top-border">
                 <Button className="font-medium text-sm">创建新主题</Button>
             </div>
             <div className="additional text-sm top-border">

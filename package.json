@@ -20,6 +20,12 @@
   },
   "homepage": "https://github.com/cbdyzj/white-tower#readme",
   "dependencies": {
+    "@codemirror/basic-setup": "^0.18.2",
+    "@codemirror/commands": "^0.18.3",
+    "@codemirror/lang-markdown": "^0.18.4",
+    "@codemirror/state": "^0.18.7",
+    "@codemirror/view": "^0.18.19",
+    "create-react-class": "^15.7.0",
     "next": "11.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",

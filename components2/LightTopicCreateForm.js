@@ -3,7 +3,7 @@ import ContrastButton from './ContrastButton'
 import TextLink from './TextLink'
 import Text from './Text'
 
-const _TopicCreateForm = styled.form`
+const _LightTopicCreateForm = styled.form`
   width: 100%;
   border-radius: 2px;
   background-color: #fff;
@@ -41,8 +41,8 @@ const _TopicCreateForm = styled.form`
     }
   }
 
-  & > .footer {
-    padding: 10px;
+  & > .foot {
+    padding: 0 10px 10px;
 
     & > button {
       padding-left: 10px;
@@ -56,28 +56,29 @@ const _TopicCreateForm = styled.form`
   }
 `
 
-export default function TopicCreateForm(props) {
+export default function LightTopicCreateForm(props) {
 
     function handleInput(ev) {
-        const target = ev.target
-        target.style.height = 'auto'
-        target.style.height = ev.target.scrollHeight + 'px'
+        ev.target.style.height = 'auto'
+        ev.target.style.height = ev.target.scrollHeight + 'px'
     }
 
     return (
-        <_TopicCreateForm className="shadow">
+        <_LightTopicCreateForm className="shadow">
             <div className="input-body">
                 <input type="text" placeholder="请输入主题标题，如果标题能够表达完整内容，则正文可以为空"/>
                 <textarea className="text-sm" onChange={handleInput} placeholder="正文"/>
             </div>
-            <div className="footer top-border">
-                <ContrastButton type="submit" className="font-medium text-sm">创建新主题</ContrastButton>
+            <div className="foot">
+                <ContrastButton type="submit" className="font-medium text-sm">
+                    创建新主题
+                </ContrastButton>
             </div>
             <div className="additional text-sm top-border">
                 <TextLink className="text-sm">忽略这个节点</TextLink>
                 <span>&nbsp;&nbsp;</span>
                 <Text.LightGray className="text-sm">被忽略的节点中的主题将不会在首页出现</Text.LightGray>
             </div>
-        </_TopicCreateForm>
+        </_LightTopicCreateForm>
     )
 }

@@ -9,7 +9,7 @@ const _TopicReplyForm = styled.form`
   border-radius: 2px;
   background-color: #fff;
 
-  & > .header {
+  & > .head {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -36,8 +36,8 @@ const _TopicReplyForm = styled.form`
     }
   }
 
-  & > .footer {
-    padding: 10px;
+  & > .foot {
+    padding: 0 10px 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -57,9 +57,8 @@ const _TopicReplyForm = styled.form`
 export default function TopicReplyForm(props) {
 
     function handleInput(ev) {
-        const target = ev.target
-        target.style.height = 'auto'
-        target.style.height = ev.target.scrollHeight + 'px'
+        ev.target.style.height = 'auto'
+        ev.target.style.height = ev.target.scrollHeight + 'px'
     }
 
     function handleSubmit(ev) {
@@ -69,14 +68,14 @@ export default function TopicReplyForm(props) {
 
     return (
         <_TopicReplyForm className="shadow" onSubmit={handleSubmit}>
-            <div className="header">
+            <div className="head">
                 <Text.Black className="text-sm">添加一条新回复</Text.Black>
                 <TextLink onClick={scrollToTop} className="text-sm">回到顶部</TextLink>
             </div>
             <div className="input-body top-border">
                 <textarea className="text-sm" onChange={handleInput}/>
             </div>
-            <div className="footer top-border">
+            <div className="foot">
                 <ContrastButton type="submit" className="font-medium text-sm">回复</ContrastButton>
                 <Text.Gray className="text-sm">请尽量让自己的回复能够对别人有帮助</Text.Gray>
             </div>

@@ -8,7 +8,7 @@ const RecentTopicListContainer = styled.div`
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0) 0 0 0 0, rgba(0, 0, 0, 0) 0 0 0 0, rgba(0, 0, 0, 0.1) 0 1px 3px 0, rgba(0, 0, 0, 0.06) 0 1px 2px 0;
 
-  & > .header {
+  & > .head {
     padding: 10px;
     display: flex;
     align-items: center;
@@ -22,7 +22,7 @@ export default function RecentTopicList(props) {
 
     return (
         <RecentTopicListContainer>
-            <div className="header text-base">
+            <div className="head text-base">
                 <div>
                     <Button as="a" href={'/'}>白塔阅读</Button>
                     &nbsp;&nbsp;›&nbsp;&nbsp;

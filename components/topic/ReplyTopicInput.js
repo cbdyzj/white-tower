@@ -7,7 +7,7 @@ const TopicReplyInputContainer = styled.div`
   border-radius: 2px;
   box-shadow: rgba(0, 0, 0, 0) 0 0 0 0, rgba(0, 0, 0, 0) 0 0 0 0, rgba(0, 0, 0, 0.1) 0 1px 3px 0, rgba(0, 0, 0, 0.06) 0 1px 2px 0;
 
-  & > .header {
+  & > .head {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -30,7 +30,7 @@ const TopicReplyInputContainer = styled.div`
     }
   }
 
-  & > .footer {
+  & > .foot {
     padding: 10px;
     display: flex;
     align-items: center;
@@ -49,14 +49,14 @@ export default function ReplyTopicInput(props) {
 
     return (
         <TopicReplyInputContainer as="form" className="text-sm">
-            <div className="header">
+            <div className="head">
                 <span>添加一条新回复</span>
                 <Button as="a">回到顶部</Button>
             </div>
             <div className="input-area top-border">
                 <textarea className="text-sm" onChange={handleInput}/>
             </div>
-            <div className="footer top-border">
+            <div className="foot top-border">
                 <Button className="font-medium text-sm">回复</Button>
                 <span className="text-gray">请尽量让自己的回复能够对别人有帮助</span>
             </div>

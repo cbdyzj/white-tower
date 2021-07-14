@@ -10,11 +10,12 @@ import CountText from '../components2/CountText'
 import CountLink from '../components2/CountLink'
 import TextLink from '../components2/TextLink'
 import LabelLink from '../components2/LabelLink'
-import LightLink from '../components2/LightLink'
 import NodeLink from '../components2/NodeLink'
 import TopicReplyForm from '../components2/TopicReplyForm'
-import TopicCreateForm from '../components2/TopicCreateForm'
-import UnreadReminder from '../components2/UnreadReminder'
+import LightTopicCreateForm from '../components2/LightTopicCreateForm'
+import UnreadReminder, { NoUnread } from '../components2/UnreadReminder'
+import TopicTitleInput from '../components2/TopicTitleInput'
+import TopicContentInput from '../components2/TopicContentInput'
 
 const _ComponentGallery = styled.div`
   min-height: 100vh;
@@ -34,12 +35,21 @@ export default function ComponentGallery(props) {
             <_ComponentGallery>
                 <h1 className="text-2xl">组件</h1>
 
-                <Demo title="UnreadReminder">
-                    <UnreadReminder count={2}/>
+                <Demo title="TopicContentInput">
+                    <TopicContentInput/>
                 </Demo>
 
-                <Demo title="TopicCreateForm">
-                    <TopicCreateForm/>
+                <Demo title="TopicTitleInput">
+                    <TopicTitleInput/>
+                </Demo>
+
+                <Demo title="UnreadReminder">
+                    <UnreadReminder href="#" count={2}/>
+                    <NoUnread href="#"/>
+                </Demo>
+
+                <Demo title="LightTopicCreateForm">
+                    <LightTopicCreateForm/>
                 </Demo>
 
                 <Demo title="TopicReplyForm">
@@ -51,9 +61,7 @@ export default function ComponentGallery(props) {
                     <NodeLink href="#">永暗之河</NodeLink>
                 </Demo>
 
-                <Demo title="LightLink">
-                    <LightLink href="#">0 条未读提醒</LightLink>
-                </Demo>
+
                 <Demo title="LabelLink">
                     <LabelLink href="#">诡秘之主</LabelLink>
                 </Demo>
@@ -84,6 +92,7 @@ export default function ComponentGallery(props) {
                 </Demo>
                 <Demo title="TabButton">
                     <TabButton current>读书</TabButton>
+                    <TabButton>文摘</TabButton>
                     <TabButton>幻想</TabButton>
                 </Demo>
                 <Demo title="ContrastButton">
