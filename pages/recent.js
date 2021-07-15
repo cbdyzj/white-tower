@@ -1,9 +1,9 @@
-import Layout from '../components/layout/Layout'
+import Layout from '../components_deprecated/layout/Layout'
 
 import topic_list from '../__test_data/topic_list'
 import user_data from '../__test_data/user_data'
-import Aside from '../components/layout/Aside'
-import RecentTopicList from '../components/recent/RecentTopicList'
+import Aside from '../components_deprecated/layout/Aside'
+import RecentTopicList from '../components_deprecated/recent/RecentTopicList'
 
 export default function Recent(props) {
 

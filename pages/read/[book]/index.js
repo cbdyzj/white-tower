@@ -1,4 +1,4 @@
-import Layout from '../../../components/layout/Layout'
+import Layout from '../../../components_deprecated/layout/Layout'
 
 export default function Index(props) {
 

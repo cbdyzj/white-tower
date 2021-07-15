@@ -56,7 +56,7 @@ const _LightTopicCreateForm = styled.form`
   }
 `
 
-export default function LightTopicCreateForm(props) {
+export default function TopicCreateForm(props) {
 
     function handleInput(ev) {
         ev.target.style.height = 'auto'

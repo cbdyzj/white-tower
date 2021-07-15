@@ -1,4 +1,4 @@
-import Pagination from '../../components2/Pagination'
+import Pagination from '../../components/Pagination'
 import TopicListItem from '../TopicListItem'
 import styled from 'styled-components'
 

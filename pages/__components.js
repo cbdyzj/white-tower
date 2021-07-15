@@ -1,21 +1,22 @@
 import styled from 'styled-components'
 import Head from 'next/head'
-import Avatar from '../components2/Avatar'
-import Demo from '../components2/Demo'
-import Pagination from '../components2/Pagination'
-import LightPagination from '../components2/LightPagination'
-import ContrastButton from '../components2/ContrastButton'
-import TabButton from '../components2/TabButton'
-import CountText from '../components2/CountText'
-import CountLink from '../components2/CountLink'
-import TextLink from '../components2/TextLink'
-import LabelLink from '../components2/LabelLink'
-import NodeLink from '../components2/NodeLink'
-import TopicReplyForm from '../components2/TopicReplyForm'
-import LightTopicCreateForm from '../components2/LightTopicCreateForm'
-import UnreadReminder, { NoUnread } from '../components2/UnreadReminder'
-import TopicTitleInput from '../components2/TopicTitleInput'
-import TopicContentInput from '../components2/TopicContentInput'
+import Avatar from '../components/Avatar'
+import Demo from '../components/Demo'
+import Pagination from '../components/Pagination'
+import LightPagination from '../components/LightPagination'
+import ContrastButton from '../components/ContrastButton'
+import TabButton from '../components/TabButton'
+import CountText from '../components/CountText'
+import CountLink from '../components/CountLink'
+import TextLink from '../components/TextLink'
+import LabelLink from '../components/LabelLink'
+import NodeLink from '../components/NodeLink'
+import TopicReplyForm from '../components/TopicReplyForm'
+import TopicCreateForm from '../components/TopicCreateForm'
+import UnreadReminder, { NoUnread } from '../components/UnreadReminder'
+import TopicTitleInput from '../components/TopicTitleInput'
+import TopicContentInput from '../components/TopicContentInput'
+import TopicReplyEmpty from '../components/TopicReplyEmpty'
 
 const _ComponentGallery = styled.div`
   min-height: 100vh;
@@ -35,6 +36,9 @@ export default function ComponentGallery(props) {
             <_ComponentGallery>
                 <h1 className="text-2xl">组件</h1>
 
+                <Demo title="TopicReplyEmpty">
+                    <TopicReplyEmpty/>
+                </Demo>
                 <Demo title="TopicContentInput">
                     <TopicContentInput/>
                 </Demo>
@@ -48,8 +52,8 @@ export default function ComponentGallery(props) {
                     <NoUnread href="#"/>
                 </Demo>
 
-                <Demo title="LightTopicCreateForm">
-                    <LightTopicCreateForm/>
+                <Demo title="TopicCreateForm">
+                    <TopicCreateForm/>
                 </Demo>
 
                 <Demo title="TopicReplyForm">

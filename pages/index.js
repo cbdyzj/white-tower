@@ -1,7 +1,7 @@
-import Layout from '../components/layout/Layout'
-import Aside from '../components/layout/Aside'
-import IndexTopicList from '../components/index/IndexTopicList'
-import NodeNav from '../components/index/NodeNav'
+import Layout from '../components_deprecated/layout/Layout'
+import Aside from '../components_deprecated/layout/Aside'
+import IndexTopicList from '../components_deprecated/index/IndexTopicList'
+import NodeNav from '../components_deprecated/index/NodeNav'
 import t from '../i18n/t'
 
 import topic_list from '../__test_data/topic_list'

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Pagination from '../../components2/Pagination'
+import Pagination from '../../components/Pagination'
 import TopicListItem from '../TopicListItem'
 import Button from '../Button'
 

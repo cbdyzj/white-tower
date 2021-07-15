@@ -9,10 +9,11 @@ import { markdown } from '@codemirror/lang-markdown'
 const _CMEditor = styled.div`
 
   & > .cm-editor {
-    outline: none ;
+    outline: none;
+    height: 300px;
 
-    & > .cm-scroller {
-      height: 300px;
+    & > .cm-scroller > .cm-content {
+      white-space: pre-wrap;
     }
   }
 `

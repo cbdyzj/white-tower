@@ -1,8 +1,8 @@
-import Layout from '../../../components/layout/Layout'
-import Aside from '../../../components/layout/Aside'
-import TopicContent from '../../../components/topic/TopicContent'
-import ReplyTopicInput from '../../../components/topic/ReplyTopicInput'
-import TopicReply from '../../../components/topic/TopicReply'
+import Layout from '../../../components_deprecated/layout/Layout'
+import Aside from '../../../components_deprecated/layout/Aside'
+import TopicContent from '../../../components_deprecated/topic/TopicContent'
+import ReplyTopicInput from '../../../components_deprecated/topic/ReplyTopicInput'
+import TopicReply from '../../../components_deprecated/topic/TopicReply'
 
 import topic_1 from '../../../__test_data/topic_1'
 import user_data from '../../../__test_data/user_data'
