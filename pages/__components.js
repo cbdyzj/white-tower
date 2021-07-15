@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Avatar from '../components/Avatar'
 import Demo from '../components/Demo'
 import Pagination from '../components/Pagination'
-import LightPagination from '../components/LightPagination'
+import PaginationMobile from '../components/mobile/Pagination'
 import ContrastButton from '../components/ContrastButton'
 import TabButton from '../components/TabButton'
 import CountText from '../components/CountText'
@@ -12,6 +12,7 @@ import TextLink from '../components/TextLink'
 import LabelLink from '../components/LabelLink'
 import NodeLink from '../components/NodeLink'
 import TopicReplyForm from '../components/TopicReplyForm'
+import TopicReplyFormMobile from '../components/mobile/TopicReplyForm'
 import TopicCreateForm from '../components/TopicCreateForm'
 import UnreadReminder, { NoUnread } from '../components/UnreadReminder'
 import TopicTitleInput from '../components/TopicTitleInput'
@@ -35,6 +36,10 @@ export default function ComponentGallery(props) {
             </Head>
             <_ComponentGallery>
                 <h1 className="text-2xl">组件</h1>
+
+                <Demo title="TopicReplyForm" platform="Mobile">
+                    <TopicReplyFormMobile/>
+                </Demo>
 
                 <Demo title="TopicReplyEmpty">
                     <TopicReplyEmpty/>
@@ -109,8 +114,8 @@ export default function ComponentGallery(props) {
                 <Demo title="Pagination">
                     <Pagination pageIndex={7} pageTotal={17}/>
                 </Demo>
-                <Demo title="LightPagination">
-                    <LightPagination pageIndex={7} pageTotal={17}/>
+                <Demo title="Pagination" platform="Mobile">
+                    <PaginationMobile pageIndex={7} pageTotal={17}/>
                 </Demo>
             </_ComponentGallery>
         </>

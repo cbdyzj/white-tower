@@ -48,7 +48,7 @@ const _NoUnread = styled.a`
 
 export function NoUnread(props) {
     return (
-        <_NoUnread  href={props.href} className="text-sm" href={props.href}>
+        <_NoUnread  href={props.href} className="text-sm">
             0 条未读提醒
         </_NoUnread>
     )

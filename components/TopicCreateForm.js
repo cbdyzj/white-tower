@@ -3,7 +3,7 @@ import ContrastButton from './ContrastButton'
 import TextLink from './TextLink'
 import Text from './Text'
 
-const _LightTopicCreateForm = styled.form`
+const _TopicCreateForm = styled.form`
   width: 100%;
   border-radius: 2px;
   background-color: #fff;
@@ -64,7 +64,7 @@ export default function TopicCreateForm(props) {
     }
 
     return (
-        <_LightTopicCreateForm className="shadow">
+        <_TopicCreateForm className="shadow">
             <div className="input-body">
                 <input type="text" placeholder="请输入主题标题，如果标题能够表达完整内容，则正文可以为空"/>
                 <textarea className="text-sm" onChange={handleInput} placeholder="正文"/>
@@ -79,6 +79,6 @@ export default function TopicCreateForm(props) {
                 <span>&nbsp;&nbsp;</span>
                 <Text.LightGray className="text-sm">被忽略的节点中的主题将不会在首页出现</Text.LightGray>
             </div>
-        </_LightTopicCreateForm>
+        </_TopicCreateForm>
     )
 }

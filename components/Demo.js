@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Text from './Text'
 
 const _Demo = styled.div`
   margin: 1rem 0;
@@ -6,8 +7,11 @@ const _Demo = styled.div`
   background-color: #fff;
 
   & > .title {
-    padding: .5rem;
+    padding: 1rem;
     margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   & > .component {
@@ -27,7 +31,10 @@ export default function Demo(props) {
 
     return (
         <_Demo className="shadow">
-            <h3 className="title text-xl font-medium">{props.title}</h3>
+            <div className="title">
+                <span className="text-xl font-medium">{props.title}</span>
+                {!!props.platform && (<Text.Gray className="text-base">{props.platform}</Text.Gray>)}
+            </div>
             <div className="component top-border">{props.children}</div>
         </_Demo>
     )
