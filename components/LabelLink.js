@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const _LabelLink = styled.a`
-  display: block;
+  display: inline-block;
   padding: 4px;
   background-color: #f5f5f5;
   border-radius: 2px;

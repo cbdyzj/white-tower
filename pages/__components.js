@@ -13,11 +13,15 @@ import LabelLink from '../components/LabelLink'
 import NodeLink from '../components/NodeLink'
 import TopicReplyForm from '../components/TopicReplyForm'
 import TopicReplyFormMobile from '../components/mobile/TopicReplyForm'
+import TopicListItemMobile from '../components/mobile/TopicListItem'
 import TopicCreateForm from '../components/TopicCreateForm'
 import UnreadReminder, { NoUnread } from '../components/UnreadReminder'
 import TopicTitleInput from '../components/TopicTitleInput'
 import TopicContentInput from '../components/TopicContentInput'
 import TopicReplyEmpty from '../components/TopicReplyEmpty'
+import { detectMobileDevice } from '../utils/ua'
+
+import topic_list from '../__test_data/topic_list'
 
 const _ComponentGallery = styled.div`
   min-height: 100vh;
@@ -36,6 +40,13 @@ export default function ComponentGallery(props) {
             </Head>
             <_ComponentGallery>
                 <h1 className="text-2xl">组件</h1>
+
+                <Demo title="TopicListItem" platform="Mobile">
+                    <div className="w-full">
+                        <TopicListItemMobile item={topic_list[0]}/>
+                        <TopicListItemMobile className="top-border" item={topic_list[1]}/>
+                    </div>
+                </Demo>
 
                 <Demo title="TopicReplyForm" platform="Mobile">
                     <TopicReplyFormMobile/>
@@ -70,7 +81,6 @@ export default function ComponentGallery(props) {
                     <NodeLink href="#">永暗之河</NodeLink>
                 </Demo>
 
-
                 <Demo title="LabelLink">
                     <LabelLink href="#">诡秘之主</LabelLink>
                 </Demo>
@@ -95,6 +105,7 @@ export default function ComponentGallery(props) {
                     <CountText>7</CountText>
                 </Demo>
                 <Demo title="Avatar">
+                    <Avatar src={'/white-tower.svg'} size="xs"/>
                     <Avatar src={'/white-tower.svg'} size="s"/>
                     <Avatar src={'/white-tower.svg'} size="m"/>
                     <Avatar src={'/white-tower.svg'} size="l"/>
@@ -120,4 +131,13 @@ export default function ComponentGallery(props) {
             </_ComponentGallery>
         </>
     )
+}
+
+export async function getServerSideProps(ctx) {
+    const ua = ctx.req.headers['user-agent']
+    const isMobile = detectMobileDevice(ua)
+
+    return {
+        props: {},
+    }
 }

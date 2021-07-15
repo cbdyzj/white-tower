@@ -9,6 +9,8 @@ const _Avatar = styled.a`
 
 function getSize(size) {
     switch (size) {
+        case 'xs':
+            return 24
         case 's':
             return 36
         case 'm':

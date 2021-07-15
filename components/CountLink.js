@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const _CountLink = styled.a`
-  display: block;
+  display: inline-block;
   color: #fff;
   font-size: 0.875rem;
   line-height: 0.875rem;
@@ -22,7 +22,7 @@ const _CountLink = styled.a`
 
 export default function CountLink(props) {
     return (
-        <_CountLink href={props.href}>
+        <_CountLink className={props.className} href={props.href}>
             {props.children}
         </_CountLink>
     )
