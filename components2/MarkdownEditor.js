@@ -4,12 +4,16 @@ import createReactClass from 'create-react-class'
 import { EditorState, basicSetup } from "@codemirror/basic-setup"
 import { EditorView, ViewPlugin, keymap } from '@codemirror/view'
 import { defaultTabBinding } from '@codemirror/commands'
-import { markdown } from "@codemirror/lang-markdown"
+import { markdown } from '@codemirror/lang-markdown'
 
 const _CMEditor = styled.div`
 
-  & .cm-scroller {
-    height: 300px;
+  & > .cm-editor {
+    outline: none ;
+
+    & > .cm-scroller {
+      height: 300px;
+    }
   }
 `
 
@@ -22,7 +26,7 @@ const MarkdownEditor = createReactClass({
             markdown(),
         ]
 
-        if (typeof  this.props.onChange === 'function') {
+        if (typeof this.props.onChange === 'function') {
             extensions.push(ViewPlugin.define((view) => {
                 return {
                     update: (_update) => {
