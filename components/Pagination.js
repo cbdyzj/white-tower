@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import { useState } from 'react'
 import ContrastButton from './ContrastButton'
-import Text from './Text'
 
 const _Pagination = styled.div`
   width: 100%;
@@ -113,13 +112,13 @@ export default function Pagination(props) {
             <div className="page-index">
                 <ContrastButton current={pageIndex === 1} className="text-sm">1</ContrastButton>
                 {(pageIndex > PAGE_NUMBER_OFFSET) && (pageTotal > PAGE_NUMBER_COUNT) && (
-                    <Text.LightGray className="text-base">...</Text.LightGray>
+                    <span className="text-base text-light-gray">...</span>
                 )}
                 {numbers.map(it => (
                     <ContrastButton className="text-sm" current={pageIndex === it} key={it}>{it}</ContrastButton>
                 ))}
                 {(pageIndex + PAGE_NUMBER_OFFSET <= pageTotal) && ((pageTotal > PAGE_NUMBER_COUNT)) && (
-                    <Text.LightGray className="text-base">...</Text.LightGray>
+                    <span className="text-base text-light-gray">...</span>
                 )}
                 {(pageTotal > 1) && (
                     <ContrastButton current={pageIndex === pageTotal} className="text-sm">{pageTotal}</ContrastButton>

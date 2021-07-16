@@ -1,19 +1,19 @@
 import styled from 'styled-components'
-import Avatar from '../Avatar'
-import CountLink from '../CountLink'
-import LabelLink from '../LabelLink'
-import TextLink from '../TextLink'
-import { getTimeDurationText } from '../../utils/time'
+import Avatar from './Avatar'
+import CountLink from './CountLink'
+import LabelLink from './LabelLink'
+import TextLink from './TextLink'
+import { getTimeDurationText } from '../utils/time'
 
 const _TopicListItem = styled.div`
-  padding: 5px;
+  padding: 10px;
 
   & > .avatar {
     padding-right: 10px;
   }
 
   & > .topic-synopsis {
-    width: calc(100% - 24px - 10px - 70px);
+    width: calc(100% - 48px - 10px - 70px);
 
     & > div:not(:first-child) {
       margin-top: 5px;
@@ -31,30 +31,24 @@ export default function TopicListItem(props) {
     return (
         <_TopicListItem className={`flex w-full ${props.className || ''}`}>
             <div className="avatar">
-                <Avatar href={'/user/' + encodeURIComponent(item.postUser)} src={item.postUserAvatarUrl} size="xs"/>
+                <Avatar href={'/user/' + encodeURIComponent(item.postUser)} src={item.postUserAvatarUrl} size="m"/>
             </div>
             <div className="topic-synopsis">
-                {props.showNodeLabel && (
-                    <div>
-                        <LabelLink href={'/go/' + item.nodeCode}>{item.nodeName}</LabelLink>
-                        <span className="text-xs text-light-gray">&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-                        <TextLink className="text-xs font-bold" href={'/user/' + encodeURIComponent(item.postUser)}>
-                            {item.postUser}
-                        </TextLink>
-                    </div>
-                )}
                 <div>
-                    <TextLink typical href={'/t/' + item.topicId}>{item.title}</TextLink>
+                    <TextLink typical
+                              href={'/t/' + item.topicId}>{item.title}</TextLink>
                 </div>
                 <div>
-                    {!props.showNodeLabel && (
+                    {props.showNodeLabel && (
                         <>
-                            <TextLink className="text-xs font-bold" href={'/user/' + encodeURIComponent(item.postUser)}>
-                                {item.postUser}
-                            </TextLink>
+                            <LabelLink href={'/go/' + item.nodeCode}>{item.nodeName}</LabelLink>
                             <span className="text-xs text-light-gray">&nbsp;&nbsp;•&nbsp;&nbsp;</span>
                         </>
                     )}
+                    <TextLink className="text-xs font-bold" href={'/user/' + encodeURIComponent(item.postUser)}>
+                        {item.postUser}
+                    </TextLink>
+                    <span className="text-xs text-light-gray">&nbsp;&nbsp;•&nbsp;&nbsp;</span>
                     <span className="text-xs text-light-gray">{getTimeDurationText(item.updatedTime)}</span>
                     {item.replyCount > 0 && (
                         <>

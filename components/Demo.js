@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import Text from './Text'
 
 const _Demo = styled.div`
   margin: 1rem 0;
@@ -33,7 +32,7 @@ export default function Demo(props) {
         <_Demo className="shadow">
             <div className="title">
                 <span className="text-xl font-medium">{props.title}</span>
-                {!!props.platform && (<Text.Gray className="text-base">{props.platform}</Text.Gray>)}
+                {!!props.platform && (<span className="text-base text-gray">{props.platform}</span>)}
             </div>
             <div className="component top-border">{props.children}</div>
         </_Demo>

@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import ContrastButton from './ContrastButton'
-import Text from './Text'
 import TextLink from './TextLink'
 import { scrollToTop } from '../utils/scroll'
 
@@ -69,7 +68,7 @@ export default function TopicReplyForm(props) {
     return (
         <_TopicReplyForm className="shadow" onSubmit={handleSubmit}>
             <div className="head">
-                <Text.Black className="text-sm">添加一条新回复</Text.Black>
+                <span className="text-sm text-black">添加一条新回复</span>
                 <TextLink onClick={scrollToTop} className="text-sm">回到顶部</TextLink>
             </div>
             <div className="input-body top-border">
@@ -77,7 +76,7 @@ export default function TopicReplyForm(props) {
             </div>
             <div className="foot">
                 <ContrastButton type="submit" className="font-medium text-sm">回复</ContrastButton>
-                <Text.Gray className="text-sm">请尽量让自己的回复能够对别人有帮助</Text.Gray>
+                <span className="text-sm text-gray">请尽量让自己的回复能够对别人有帮助</span>
             </div>
             <div className="additional top-border">
                 <TextLink className="text-sm" href={'/'}>← 白塔阅读</TextLink>

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const _CountText = styled.span`
-  display: block;
+  display: inline-block;
   font-size: 10px;
   line-height: 1;
   font-weight: 500;

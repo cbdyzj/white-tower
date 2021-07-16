@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+.bg-white {
+    background-color: #fff;
+}
+
+.text-black {
+    color: #000;
+}
+
+.text-gray {
+    color: #999;
+}
+
+.text-light-gray {
+    color: #ccc;
+}
+
+.text-red {
+    color: #ef4444;
+}

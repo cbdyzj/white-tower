@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import ContrastButton from './ContrastButton'
 import TextLink from './TextLink'
-import Text from './Text'
+import t from '../i18n/t'
 
 const _TopicCreateForm = styled.form`
   width: 100%;
@@ -66,7 +66,7 @@ export default function TopicCreateForm(props) {
     return (
         <_TopicCreateForm className="shadow">
             <div className="input-body">
-                <input type="text" placeholder="请输入主题标题，如果标题能够表达完整内容，则正文可以为空"/>
+                <input type="text" placeholder={t.TOPIC_TITLE_INPUT_PLACEHOLDER}/>
                 <textarea className="text-sm" onChange={handleInput} placeholder="正文"/>
             </div>
             <div className="foot">
@@ -77,7 +77,7 @@ export default function TopicCreateForm(props) {
             <div className="additional text-sm top-border">
                 <TextLink className="text-sm">忽略这个节点</TextLink>
                 <span>&nbsp;&nbsp;</span>
-                <Text.LightGray className="text-sm">被忽略的节点中的主题将不会在首页出现</Text.LightGray>
+                <span className="text-sm text-light-gray">被忽略的节点中的主题将不会在首页出现</span>
             </div>
         </_TopicCreateForm>
     )

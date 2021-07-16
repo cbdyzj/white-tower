@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import Text from './Text'
 import MarkdownEditor from './MarkdownEditor'
 import { useState } from 'react'
 
@@ -30,12 +29,12 @@ export default function TopicContentInput(props) {
     return (
         <_TopicContentInput>
             <div className="title">
-                <Text.Black className="text-sm">正文</Text.Black>
+                <span className="text-sm text-black">正文</span>
                 {countdown >= 0 && (
-                    <Text.LightGray className="text-sm">{countdown}</Text.LightGray>
+                    <span className="text-sm text-light-gray">{countdown}</span>
                 )}
                 {countdown < 0 && (
-                    <Text.Red className="text-sm">{countdown}</Text.Red>
+                    <span className="text-sm text-red">{countdown}</span>
                 )}
             </div>
             <div className="input text-sm top-border">

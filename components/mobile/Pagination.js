@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import ContrastButton from '../ContrastButton'
-import Text from '../Text'
 
 const _Pagination = styled.div`
   width: 100%;
@@ -18,7 +17,7 @@ export default function Pagination(props) {
     return (
         <_Pagination>
             <ContrastButton className="text-sm">上一页</ContrastButton>
-            <Text.LightGray className="font-bold text-sm">{pageIndex}/{pageTotal}</Text.LightGray>
+            <span className="font-bold text-sm text-light-gray">{pageIndex}/{pageTotal}</span>
             <ContrastButton className="text-sm">下一页</ContrastButton>
         </_Pagination>
     )

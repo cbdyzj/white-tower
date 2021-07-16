@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import Text from './Text'
 import { useState } from 'react'
+import t from '../i18n/t'
 
 const _TopicTitleInput = styled.div`
   width: 100%;
@@ -46,16 +46,16 @@ export default function TopicTitleInput(props) {
     return (
         <_TopicTitleInput>
             <div className="title">
-                <Text.Black className="text-sm">主题标题</Text.Black>
+                <span className="text-sm text-black">主题标题</span>
                 {countdown >= 0 && (
-                    <Text.LightGray className="text-sm">{countdown}</Text.LightGray>
+                    <span className="text-sm text-light-gray">{countdown}</span>
                 )}
                 {countdown < 0 && (
-                    <Text.Red className="text-sm">{countdown}</Text.Red>
+                    <span className="text-sm text-red">{countdown}</span>
                 )}            </div>
             <div className="input top-border">
                 <textarea className="text-sm" rows="1" value={inputValue} onChange={handleInput}
-                          placeholder="请输入主题标题，如果标题能够表达完整内容，则正文可以为空"/>
+                          placeholder={t.TOPIC_TITLE_INPUT_PLACEHOLDER}/>
             </div>
         </_TopicTitleInput>
     )

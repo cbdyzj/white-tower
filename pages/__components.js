@@ -14,14 +14,17 @@ import NodeLink from '../components/NodeLink'
 import TopicReplyForm from '../components/TopicReplyForm'
 import TopicReplyFormMobile from '../components/mobile/TopicReplyForm'
 import TopicListItemMobile from '../components/mobile/TopicListItem'
+import TopicListItem from '../components/TopicListItem'
 import TopicCreateForm from '../components/TopicCreateForm'
 import UnreadReminder, { NoUnread } from '../components/UnreadReminder'
 import TopicTitleInput from '../components/TopicTitleInput'
 import TopicContentInput from '../components/TopicContentInput'
 import TopicReplyEmpty from '../components/TopicReplyEmpty'
 import { detectMobileDevice } from '../utils/ua'
+import TopicReplyListItemMobile from '../components/mobile/TopicReplyListItem'
 
 import topic_list from '../__test_data/topic_list'
+import topic_1 from '../__test_data/topic_1'
 
 const _ComponentGallery = styled.div`
   min-height: 100vh;
@@ -39,11 +42,26 @@ export default function ComponentGallery(props) {
                 <link rel="icon" href={'/white-tower.svg'}/>
             </Head>
             <_ComponentGallery>
-                <h1 className="text-2xl">组件</h1>
+
+                <Demo title="TopicReplyListItem" platform="Mobile">
+                    <div className="w-full">
+                        <TopicReplyListItemMobile index={1} item={topic_1.replyList[0]}/>
+                        <TopicReplyListItemMobile className="top-border" index={2} item={topic_1.replyList[1]}/>
+                        <TopicReplyListItemMobile className="top-border" index={3} item={topic_1.replyList[2]}/>
+                        <TopicReplyListItemMobile className="top-border" index={4} item={topic_1.replyList[3]}/>
+                    </div>
+                </Demo>
+
+                <Demo title="TopicListItem">
+                    <div className="w-full">
+                        <TopicListItem showNodeLabel item={topic_list[0]}/>
+                        <TopicListItem className="top-border" item={topic_list[1]}/>
+                    </div>
+                </Demo>
 
                 <Demo title="TopicListItem" platform="Mobile">
                     <div className="w-full">
-                        <TopicListItemMobile item={topic_list[0]}/>
+                        <TopicListItemMobile showNodeLabel item={topic_list[0]}/>
                         <TopicListItemMobile className="top-border" item={topic_list[1]}/>
                     </div>
                 </Demo>
