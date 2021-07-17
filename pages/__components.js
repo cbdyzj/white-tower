@@ -22,6 +22,8 @@ import TopicContentInput from '../components/TopicContentInput'
 import TopicReplyEmpty from '../components/TopicReplyEmpty'
 import { detectMobileDevice } from '../utils/ua'
 import TopicReplyListItemMobile from '../components/mobile/TopicReplyListItem'
+import TopicReplyListItem from '../components/TopicReplyListItem'
+import UserWidget from '../widgets/UserWidget'
 
 import topic_list from '../__test_data/topic_list'
 import topic_1 from '../__test_data/topic_1'
@@ -42,6 +44,19 @@ export default function ComponentGallery(props) {
                 <link rel="icon" href={'/white-tower.svg'}/>
             </Head>
             <_ComponentGallery>
+
+                <Demo title="UserWidget">
+                    <UserWidget/>
+                </Demo>
+
+                <Demo title="TopicReplyListItem">
+                    <div className="w-full">
+                        <TopicReplyListItem index={1} item={topic_1.replyList[0]}/>
+                        <TopicReplyListItem className="top-border" index={2} item={topic_1.replyList[1]}/>
+                        <TopicReplyListItem className="top-border" index={3} item={topic_1.replyList[2]}/>
+                        <TopicReplyListItem className="top-border" index={4} item={topic_1.replyList[3]}/>
+                    </div>
+                </Demo>
 
                 <Demo title="TopicReplyListItem" platform="Mobile">
                     <div className="w-full">
@@ -142,6 +157,7 @@ export default function ComponentGallery(props) {
                 </Demo>
                 <Demo title="Pagination">
                     <Pagination pageIndex={7} pageTotal={17}/>
+                    <Pagination pageIndex={1} pageTotal={2}/>
                 </Demo>
                 <Demo title="Pagination" platform="Mobile">
                     <PaginationMobile pageIndex={7} pageTotal={17}/>

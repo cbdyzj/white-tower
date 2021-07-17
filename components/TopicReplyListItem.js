@@ -1,18 +1,18 @@
 import styled from 'styled-components'
-import Avatar from '../Avatar'
-import TextLink from '../TextLink'
-import { getTimeDurationText } from '../../utils/time'
-import CountText from '../CountText'
+import Avatar from './Avatar'
+import TextLink from './TextLink'
+import { getTimeDurationText } from '../utils/time'
+import CountText from './CountText'
 
 const _TopicReplyListItem = styled.div`
-  padding: 5px;
+  padding: 10px;
 
   & > .avatar {
     padding-right: 10px;
   }
 
   & > .reply-synopsis {
-    width: calc(100% - 24px - 10px);
+    width: calc(100% - 48px - 10px);
 
     & > div:not(:first-child) {
       margin-top: 5px;
@@ -26,12 +26,12 @@ export default function TopicReplyListItem(props) {
     return (
         <_TopicReplyListItem className={`flex w-full ${props.className || ''}`}>
             <div className="avatar">
-                <Avatar href={'/user/' + encodeURIComponent(item.replyUser)} src={item.replyUserAvatarUrl} size="xs"/>
+                <Avatar href={'/user/' + encodeURIComponent(item.replyUser)} src={item.replyUserAvatarUrl} size="m"/>
             </div>
             <div className="reply-synopsis">
                 <div className="flex justify-between items-center">
                     <div className="flex items-center">
-                        <TextLink className="text-xs font-bold" href={'/user/' + encodeURIComponent(item.replyUser)}>
+                        <TextLink className="text-sm font-bold" href={'/user/' + encodeURIComponent(item.replyUser)}>
                             {item.replyUser}
                         </TextLink>
                         <span>&nbsp;&nbsp;&nbsp;</span>

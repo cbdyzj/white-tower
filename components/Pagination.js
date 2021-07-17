@@ -123,6 +123,7 @@ export default function Pagination(props) {
                 {(pageTotal > 1) && (
                     <ContrastButton current={pageIndex === pageTotal} className="text-sm">{pageTotal}</ContrastButton>
                 )}
+                <span/>
                 <input className="page-index-input" type="number" value={pageIndexValue}
                        onChange={handleInputChange} onKeyDown={handleKeyDown}/>
             </div>
