@@ -4,6 +4,7 @@ import TextLink from '../components/TextLink'
 
 const _UserWidget = styled.div`
   width: 270px;
+  border-radius: 2px;
 
   & > .username {
     padding: 10px;
