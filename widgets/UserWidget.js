@@ -3,7 +3,8 @@ import Avatar from '../components/Avatar'
 import TextLink from '../components/TextLink'
 
 const _UserWidget = styled.div`
-  width: 270px;
+  background-color: #fff;
+  min-width: 270px;
   border-radius: 2px;
 
   & > .username {
@@ -48,25 +49,28 @@ const _UserWidget = styled.div`
 `
 
 export default function UserWidget(props) {
+
+    const userData = props.userData
+
     return (
         <_UserWidget className="shadow">
             <div className="username flex items-center">
                 <div className="avatar">
-                    <Avatar href={'/'} src={'/white-tower.svg'} size="m"/>
+                    <Avatar href={'/'} src={userData.userAvatarUrl} size="m"/>
                 </div>
-                <TextLink className="text-base">阿尔贝鲁</TextLink>
+                <TextLink className="text-base">{userData.username}</TextLink>
             </div>
             <div className="favorites flex">
                 <a>
-                    <span className="favorite-count text-base">2</span>
+                    <span className="favorite-count text-base">{userData.nodeFavouriteCount}</span>
                     <span className="text-light-gray text-sm">节点收藏</span>
                 </a>
                 <a>
-                    <span className="favorite-count text-base">36</span>
+                    <span className="favorite-count text-base">{userData.topicFavouriteCount}</span>
                     <span className="text-light-gray text-sm">主题收藏</span>
                 </a>
                 <a>
-                    <span className="favorite-count text-base">0</span>
+                    <span className="favorite-count text-base">{userData.followingCount}</span>
                     <span className="text-light-gray text-sm">特别关注</span>
                 </a>
             </div>
@@ -74,7 +78,7 @@ export default function UserWidget(props) {
                 <TextLink className="text-sm">创作新主题</TextLink>
             </div>
             <div className="additional top-border">
-                <TextLink className="text-sm">0 条未读提醒</TextLink>
+                <TextLink className="text-sm">{userData.unreadMessageCount} 条未读提醒</TextLink>
             </div>
 
         </_UserWidget>

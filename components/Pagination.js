@@ -11,8 +11,11 @@ const _Pagination = styled.div`
 
   & > .page-index {
     display: flex;
-    gap: 4px;
     flex-wrap: wrap;
+
+    & > :not(:first-child) {
+      margin-left: 4px;
+    }
 
     & > button {
       min-width: 26px;
@@ -34,7 +37,10 @@ const _Pagination = styled.div`
 
   & > .page-button {
     display: flex;
-    gap: 4px;
+
+    & > :not(:first-child) {
+      margin-left: 4px;
+    }
   }
 `
 

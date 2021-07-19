@@ -16,9 +16,9 @@ const _Demo = styled.div`
   & > .component {
     padding: 1rem;
     display: flex;
-    gap: 1rem;
     flex-wrap: wrap;
     align-items: flex-start;
+    gap: 1rem;
 
     & > * {
       flex: none;

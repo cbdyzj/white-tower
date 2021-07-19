@@ -1,5 +1,5 @@
 export default {
-    user: '阿尔贝鲁',
+    username: '阿尔贝鲁',
     userAvatarUrl: '/white-tower.svg',
     nodeFavouriteCount: 10,
     topicFavouriteCount: 7,

@@ -102,10 +102,10 @@ export default function UserCard(props) {
         <UserCardContainer>
             <div className="user-data">
                 <div className="user-avatar-name">
-                    <a className="user-avatar" href={'/user/' + userData.user}>
+                    <a className="user-avatar" href={'/user/' + userData.username}>
                         <Image src={userData.userAvatarUrl} width={48} height={48}/>
                     </a>
-                    <Button className="username" as="a">{userData.user}</Button>
+                    <Button className="username" as="a">{userData.username}</Button>
                 </div>
                 <div className="user-favourite">
                     <a className="favourite" href={'/my/nodes'}>
