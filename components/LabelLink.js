@@ -7,6 +7,8 @@ const _LabelLink = styled.a`
   border-radius: 2px;
   color: #999;
   cursor: pointer;
+  font-size: .75rem;
+  line-height: 1;
 
   &:hover {
     color: #777;
@@ -17,7 +19,7 @@ const _LabelLink = styled.a`
 export default function LabelLink(props) {
 
     return (
-        <_LabelLink className="text-xs" href={props.href}>
+        <_LabelLink href={props.href}>
             {props.children}
         </_LabelLink>
     )
