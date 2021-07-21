@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import ContrastButton from './ContrastButton'
-import TextLink from './TextLink'
+import ContrastButton from '../components/ContrastButton'
+import TextLink from '../components/TextLink'
 import t from '../i18n/t'
 
 const _TopicCreateForm = styled.form`
@@ -45,8 +45,7 @@ const _TopicCreateForm = styled.form`
     padding: 0 10px 10px;
 
     & > button {
-      padding-left: 10px;
-      padding-right: 10px;
+      padding: 4px 8px;
     }
   }
 
@@ -64,7 +63,7 @@ export default function TopicCreateForm(props) {
     }
 
     return (
-        <_TopicCreateForm className="shadow">
+        <_TopicCreateForm style={props.style} className="shadow">
             <div className="input-body">
                 <input type="text" placeholder={t.TOPIC_TITLE_INPUT_PLACEHOLDER}/>
                 <textarea className="text-sm" onChange={handleInput} placeholder="正文"/>

@@ -43,12 +43,14 @@ export default function IndexTopicList(props) {
                 <TabButton>历史</TabButton>
             </div>
             <div className="nodes text-sm">
-                <TextLink>诡秘之主</TextLink>
-                <TextLink>诡秘：从阅读者开始</TextLink>
-                <TextLink>克苏鲁的呼唤</TextLink>
+                <TextLink href={'/go/gm'}>诡秘之主</TextLink>
+                <TextLink href={'/go/gmydz'}>诡秘：从阅读者开始</TextLink>
+                <TextLink href={'/go/ksl'}>克苏鲁的呼唤</TextLink>
             </div>
             <div>
-                {topicList.map(it => (<TopicListItem key={it.topicId} showNodeLabel className="top-border" item={it}/>))}
+                {topicList.map(it => (
+                    <TopicListItem key={it.topicId} showNodeLabel className="top-border" item={it}/>
+                ))}
             </div>
             <div className="foot text-sm top-border">
                 <span>»&nbsp;&nbsp;</span>

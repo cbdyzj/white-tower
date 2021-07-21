@@ -15,7 +15,7 @@ import TopicReplyForm from '../components/TopicReplyForm'
 import TopicReplyFormMobile from '../components/mobile/TopicReplyForm'
 import TopicListItemMobile from '../components/mobile/TopicListItem'
 import TopicListItem from '../components/TopicListItem'
-import TopicCreateForm from '../components/TopicCreateForm'
+import TopicCreateForm from '../widgets/TopicCreateForm'
 import UnreadReminder, { NoUnread } from '../components/UnreadReminder'
 import TopicTitleInput from '../components/TopicTitleInput'
 import TopicContentInput from '../components/TopicContentInput'
@@ -27,6 +27,7 @@ import UserWidget from '../widgets/UserWidget'
 
 import topic_list from '../__test_data/topic_list'
 import topic_1 from '../__test_data/topic_1'
+import user_data from '../__test_data/user_data'
 
 const _ComponentGallery = styled.div`
   min-height: 100vh;
@@ -46,7 +47,7 @@ export default function ComponentGallery(props) {
             <_ComponentGallery>
 
                 <Demo title="UserWidget">
-                    <UserWidget/>
+                    <UserWidget userData={user_data}/>
                 </Demo>
 
                 <Demo title="TopicReplyListItem">

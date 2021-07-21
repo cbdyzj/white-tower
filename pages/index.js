@@ -26,6 +26,7 @@ function IndexNonMobile(props) {
             <NodeNav style={{ marginTop: '20px' }} nodeNavList={nodeNavList}/>
         </>
     )
+
     const aside = (
         <>
             <UserWidget userData={userData}/>
