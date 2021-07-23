@@ -28,6 +28,7 @@ import UserWidget from '../widgets/UserWidget'
 import topic_list from '../__test_data/topic_list'
 import topic_1 from '../__test_data/topic_1'
 import user_data from '../__test_data/user_data'
+import TinyButton from '../components/TinyButton'
 
 const _ComponentGallery = styled.div`
   min-height: 100vh;
@@ -45,6 +46,11 @@ export default function ComponentGallery(props) {
                 <link rel="icon" href={'/white-tower.svg'}/>
             </Head>
             <_ComponentGallery>
+
+                <Demo title="UserWidget">
+                    <TinyButton>加入收藏</TinyButton>
+                    <TinyButton>感谢主题</TinyButton>
+                </Demo>
 
                 <Demo title="UserWidget">
                     <UserWidget userData={user_data}/>
@@ -169,8 +175,6 @@ export default function ComponentGallery(props) {
 }
 
 export async function getServerSideProps(ctx) {
-    const ua = ctx.req.headers['user-agent']
-    const isMobile = detectMobileDevice(ua)
 
     return {
         props: {},

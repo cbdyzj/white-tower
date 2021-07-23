@@ -7,7 +7,7 @@ const _NodeTopicList = styled.div`
   border-radius: 2px;
 
   & > .foot {
-    padding: 10px;
+    padding: var(--widget-padding);
   }
 `
 

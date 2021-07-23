@@ -15,7 +15,7 @@ export default function Pagination(props) {
     const pageTotal = props.pageTotal
 
     return (
-        <_Pagination className={props.className}>
+        <_Pagination className={props.className || ''}>
             <ContrastButton className="text-sm">上一页</ContrastButton>
             <span className="font-bold text-sm text-light-gray">{pageIndex}/{pageTotal}</span>
             <ContrastButton className="text-sm">下一页</ContrastButton>

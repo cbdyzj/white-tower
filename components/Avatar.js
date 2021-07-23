@@ -9,6 +9,8 @@ const _Avatar = styled.a`
 
 function getSize(size) {
     switch (size) {
+        case '2xs':
+            return 14
         case 'xs':
             return 24
         case 's':
@@ -27,7 +29,7 @@ export default function Avatar(props) {
     const size = getSize(props.size)
 
     return (
-        <_Avatar href={props.href}>
+        <_Avatar className={props.className || ''} href={props.href}>
             <Image src={props.src} width={size} height={size} alt=""/>
         </_Avatar>
     )

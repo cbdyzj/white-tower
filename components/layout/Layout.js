@@ -38,8 +38,8 @@ export default function Layout(props) {
             </Head>
             <Nav/>
             <_Body>
-                <main>{props.main}</main>
-                <aside>{props.aside}</aside>
+                <main>{props.children}</main>
+                {props.aside && <aside>{props.aside}</aside>}
             </_Body>
             <Footer/>
         </>

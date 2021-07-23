@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+:root {
+    --widget-padding: 10px;
+    --widget-padding-sm: 5px;
+}

@@ -66,7 +66,7 @@ export default function TopicReplyForm(props) {
     }
 
     return (
-        <_TopicReplyForm className="shadow" onSubmit={handleSubmit}>
+        <_TopicReplyForm style={props.style} className="shadow" onSubmit={handleSubmit}>
             <div className="head">
                 <span className="text-sm text-black">添加一条新回复</span>
                 <TextLink onClick={scrollToTop} className="text-sm">回到顶部</TextLink>

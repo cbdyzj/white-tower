@@ -1,30 +1,72 @@
-import Layout from '../../../components_deprecated/layout/Layout'
-import Aside from '../../../components_deprecated/layout/Aside'
-import TopicContent from '../../../components_deprecated/topic/TopicContent'
-import ReplyTopicInput from '../../../components_deprecated/topic/ReplyTopicInput'
-import TopicReply from '../../../components_deprecated/topic/TopicReply'
+import Layout from '../../../components/layout/Layout'
+import LayoutMobile from '../../../components/mobile/layout/Layout'
+import UserWidget from '../../../widgets/UserWidget'
+import TopicReplyList from '../../../widgets/TopicReplyList'
+import TopicReplyListMobile from '../../../widgets/mobile/TopicReplyList'
+import TopicContentMobile from '../../../widgets/mobile/TopicContent'
+import TopicReplyForm from '../../../components/TopicReplyForm'
+import TopicReplyFormMobile from '../../../components/mobile/TopicReplyForm'
+import TextLink from '../../../components/TextLink'
+import TopicContent from '../../../widgets/TopicContent'
+import { withDeviceDetection } from '../../../utils/ua'
 
 import topic_1 from '../../../__test_data/topic_1'
 import user_data from '../../../__test_data/user_data'
 
-export default function Index(props) {
-
+function TopicNonMobile(props) {
     const topic = props.topic
     const userData = props.userData
 
     const title = topic.title + ' - 白塔阅读'
 
+    const aside = (
+        <>
+            <UserWidget userData={userData}/>
+        </>
+    )
+
     return (
-        <Layout title={title} aside={<Aside userData={userData}/>}>
+        <Layout title={title} aside={aside}>
             <TopicContent topic={topic}/>
-            <TopicReply topic={topic}/>
-            <ReplyTopicInput/>
+            <TopicReplyList style={{ marginTop: '20px' }} topic={topic}/>
+            <TopicReplyForm style={{ marginTop: '20px' }}/>
+            <div style={{
+                marginTop: '20px', padding: 'var(--widget-padding)',
+                borderRadius: '2px', backgroundColor: '#fff',
+            }}>
+                <TextLink className="text-sm">报告这个主题</TextLink>
+            </div>
         </Layout>
     )
 }
 
-export async function getServerSideProps(ctx) {
+function TopicMobile(props) {
+    const topic = props.topic
 
+    const title = topic.title + ' - 白塔阅读'
+
+    return (
+        <LayoutMobile title={title}>
+            <TopicContentMobile topic={topic}/>
+            <TopicReplyListMobile topic={topic} style={{ marginTop: '5px' }}/>
+            <TopicReplyFormMobile style={{ marginTop: '5px' }}/>
+            <div style={{
+                marginTop: '5px', padding: 'var(--widget-padding-sm)',
+                borderRadius: '2px', backgroundColor: '#fff',
+            }}>
+                <TextLink className="text-sm">报告这个主题</TextLink>
+            </div>
+        </LayoutMobile>
+    )
+}
+
+export default function Topic(props) {
+
+
+    return props.isMobile ? (<TopicMobile {...props}/>) : (<TopicNonMobile {...props}/>)
+}
+
+export const getServerSideProps = withDeviceDetection(async (ctx) => {
     const topicId = ctx.query.topic
 
     return {
@@ -33,4 +75,4 @@ export async function getServerSideProps(ctx) {
             userData: user_data,
         },
     }
-}
+})

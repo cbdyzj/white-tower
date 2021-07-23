@@ -114,7 +114,7 @@ export default function Pagination(props) {
     const numbers = getPageNumbers(pageIndex, pageTotal)
 
     return (
-        <_Pagination className={props.className}>
+        <_Pagination className={props.className || ''}>
             <div className="page-index">
                 <ContrastButton current={pageIndex === 1} className="text-sm">1</ContrastButton>
                 {(pageIndex > PAGE_NUMBER_OFFSET) && (pageTotal > PAGE_NUMBER_COUNT) && (

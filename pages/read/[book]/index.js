@@ -1,15 +1,17 @@
-import Layout from '../../../components_deprecated/layout/Layout'
+import Layout from '../../../components/layout/Layout'
 
 export default function Index(props) {
 
     const bookId = props.bookId
 
+    const main = (
+        <div>
+            Book: {bookId}
+        </div>
+    )
+
     return (
-        <Layout>
-            <div style={{ padding: '1rem', minHeight: '80vh' }}>
-                Book: {bookId}
-            </div>
-        </Layout>
+        <Layout title={'白塔阅读 - 书籍'} main={main}/>
     )
 }
 

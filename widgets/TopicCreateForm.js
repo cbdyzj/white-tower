@@ -9,7 +9,7 @@ const _TopicCreateForm = styled.form`
   background-color: #fff;
 
   & > .input-body {
-    padding: 10px;
+    padding: var(--widget-padding);
 
     & > input {
       width: 100%;
@@ -42,7 +42,7 @@ const _TopicCreateForm = styled.form`
   }
 
   & > .foot {
-    padding: 0 10px 10px;
+    padding: 0 var(--widget-padding) var(--widget-padding);
 
     & > button {
       padding: 4px 8px;
@@ -50,7 +50,7 @@ const _TopicCreateForm = styled.form`
   }
 
   & > .additional {
-    padding: 10px;
+    padding: var(--widget-padding);
     text-align: right;
   }
 `

@@ -13,7 +13,7 @@ export default function Layout(props) {
                 <link rel="icon" href={'/white-tower.svg'}/>
             </Head>
             <Nav/>
-            <Main>{props.main}</Main>
+            <Main>{props.children}</Main>
             <Footer/>
         </>
     )

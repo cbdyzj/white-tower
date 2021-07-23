@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import BlueLink from '../components/BlueLink'
-import ContrastButton from '../components/ContrastButton'
-import TextLink from '../components/TextLink'
+import BlueLink from '../../components/BlueLink'
+import ContrastButton from '../../components/ContrastButton'
+import TextLink from '../../components/TextLink'
 
 const _NodeCard = styled.div`
   border-radius: 2px;
@@ -9,7 +9,7 @@ const _NodeCard = styled.div`
 
   & > .synopsis {
     color: #fff;
-    padding: var(--widget-padding);
+    padding: var(--widget-padding-sm);
     background-color: #001D25;
 
     & > .description {
@@ -19,7 +19,7 @@ const _NodeCard = styled.div`
 
   & > .operation {
     background-color: #fff;
-    padding: var(--widget-padding);
+    padding: var(--widget-padding-sm);
 
     & > button:first-child {
       padding: 4px 8px;
@@ -34,7 +34,7 @@ export default function NodeCard(props) {
             <div className="synopsis text-base">
                 <div className="flex justify-between items-center">
                     <span><BlueLink>白塔阅读</BlueLink>&nbsp;&nbsp;›&nbsp;&nbsp;读书</span>
-                    <span className="text-xs">主题总数 2496</span>
+                    <span className="text-xs">主题总数 2333</span>
                 </div>
                 <div className="description text-sm">
                     一本书，一个世界

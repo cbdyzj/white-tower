@@ -22,7 +22,7 @@ const _CountLink = styled.a`
 
 export default function CountLink(props) {
     return (
-        <_CountLink className={props.className} href={props.href}>
+        <_CountLink className={props.className || ''} href={props.href}>
             {props.children}
         </_CountLink>
     )
