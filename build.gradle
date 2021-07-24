@@ -1,0 +1,11 @@
+task stage {
+    dependsOn subprojects.collect { ":${it.name}:build" }
+}
+
+// skip tests when stage
+gradle.taskGraph.whenReady { graph ->
+    if (graph.hasTask(stage)) {
+        graph.allTasks.findAll { it instanceof Test }
+                .each { it.enabled = false }
+    }
+}

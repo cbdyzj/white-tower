@@ -1,0 +1,12 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: service
+  sql:
+    init:
+      mode: never
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 200MB

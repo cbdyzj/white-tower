@@ -1,0 +1,31 @@
+plugins {
+    id 'io.spring.dependency-management'
+    id 'org.springframework.boot'
+    id 'java'
+}
+
+group = 'app.btyd'
+
+sourceCompatibility = '16'
+targetCompatibility = '16'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.jetbrains:annotations:21.0.1'
+    // aop
+    implementation 'org.aspectj:aspectjweaver:1.9.7'
+    // postgresql
+//    implementation 'org.postgresql:postgresql:42.2.22'
+    // spring
+//    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    // test
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+    useJUnitPlatform()
+}
