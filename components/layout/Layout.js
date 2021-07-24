@@ -6,7 +6,7 @@ import t from '../../i18n/t'
 
 const _Body = styled.div`
   display: flex;
-  min-height: calc(100vh - 48px - 100px);
+  min-height: calc(100vh - 44px - 100px);
   max-width: 1080px;
   margin: 0 auto;
   padding: 20px;

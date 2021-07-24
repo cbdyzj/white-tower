@@ -9,10 +9,10 @@ const _Nav = styled.nav`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 48px;
+    height: 44px;
     max-width: 1080px;
     margin: 0 auto;
-    padding: 10px 20px;
+    padding: 8px 20px;
 
     & > .links {
       display: flex;
@@ -45,7 +45,7 @@ export default function Nav(props) {
                 <Logo className="font-medium text-lg" as="a" href={'/'}>
                     {t.WHITE_TOWER_READING}
                 </Logo>
-                <div className="links text-base">
+                <div className="links text-sm">
                     <NavLink href={'/'}>首页</NavLink>
                     <NavLink>阿尔贝鲁</NavLink>
                     <NavLink>我的书架</NavLink>
