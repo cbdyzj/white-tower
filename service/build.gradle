@@ -18,9 +18,9 @@ dependencies {
     // aop
     implementation 'org.aspectj:aspectjweaver:1.9.7'
     // postgresql
-//    implementation 'org.postgresql:postgresql:42.2.22'
+    implementation 'org.postgresql:postgresql:42.2.23'
     // spring
-//    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     // test
     testImplementation 'org.springframework.boot:spring-boot-starter-test'

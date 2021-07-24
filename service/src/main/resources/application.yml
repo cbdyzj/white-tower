@@ -3,6 +3,13 @@ server:
 spring:
   application:
     name: service
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${JDBC_DATABASE_URL:jdbc:postgresql://localhost:5432/postgres}
+    username: ${JDBC_DATABASE_USERNAME:postgres}
+    password: ${JDBC_DATABASE_PASSWORD:password}
+    hikari:
+      maximum-pool-size: 8
   sql:
     init:
       mode: never

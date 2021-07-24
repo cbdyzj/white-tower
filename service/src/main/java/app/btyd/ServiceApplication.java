@@ -20,7 +20,7 @@ public class ServiceApplication implements ApplicationContextAware, WebMvcConfig
 
     @Override
     public void addInterceptors(@NotNull InterceptorRegistry registry) {
-        registry.addInterceptor(context.getBean(AuthenticationInterceptor.class)).addPathPatterns("/api/**");
+        registry.addInterceptor(this.context.getBean(AuthenticationInterceptor.class)).addPathPatterns("/api/**");
     }
 
     @Override
