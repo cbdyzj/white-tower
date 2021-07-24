@@ -44,7 +44,7 @@ export default function TopicTitleInput(props) {
     const countdown = MAX_LENGTH - inputValue.length
 
     return (
-        <_TopicTitleInput>
+        <_TopicTitleInput className={props.className || ''}>
             <div className="title">
                 <span className="text-sm text-black">主题标题</span>
                 {countdown >= 0 && (

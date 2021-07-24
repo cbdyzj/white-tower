@@ -17,10 +17,3 @@ a {
     color: inherit;
     text-decoration: none;
 }
-
-/* background color */
-
-body > div:first-child {
-    background-color: #dedede;
-}
-

@@ -3,14 +3,22 @@ import LayoutMobile from '../components/mobile/layout/Layout'
 import Layout from '../components/layout/Layout'
 
 import user_data from '../__test_data/user_data'
+import TopicCreateWidget from '../widgets/TopicCreateWidget'
+import PostingTipWidget from '../widgets/PostingTipWidget'
 
 const title = '白塔阅读 › 创作新主题'
 
 function NewNonMobile(props) {
 
-    return (
-        <Layout title={title}>
+    const aside = (
+        <>
+            <PostingTipWidget/>
+        </>
+    )
 
+    return (
+        <Layout title={title} aside={aside}>
+            <TopicCreateWidget/>
         </Layout>
     )
 

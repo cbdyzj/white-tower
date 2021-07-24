@@ -27,7 +27,7 @@ export default function TopicContentInput(props) {
     }
 
     return (
-        <_TopicContentInput>
+        <_TopicContentInput className={props.className || ''}>
             <div className="title">
                 <span className="text-sm text-black">正文</span>
                 {countdown >= 0 && (
