@@ -8,9 +8,9 @@ import { withDeviceDetection } from '../utils/ua'
 import topic_list from '../__test_data/topic_list'
 import user_data from '../__test_data/user_data'
 
-function RecentNonMobile(props) {
+const title = '白塔阅读 › 最近的主题'
 
-    const title = '白塔阅读 › 最近的主题'
+function RecentNonMobile(props) {
 
     const topicList = props.topicList
     const userData = props.userData
@@ -29,8 +29,6 @@ function RecentNonMobile(props) {
 }
 
 function RecentMobile(props) {
-
-    const title = '白塔阅读 › 最近的主题'
 
     const topicList = props.topicList
     const userData = props.userData

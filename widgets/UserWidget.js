@@ -75,7 +75,7 @@ export default function UserWidget(props) {
                 </a>
             </div>
             <div className="create-topic top-border">
-                <TextLink className="text-sm">创作新主题</TextLink>
+                <TextLink href={'/new'} className="text-sm">创作新主题</TextLink>
             </div>
             <div className="additional top-border">
                 <TextLink className="text-sm">{userData.unreadMessageCount} 条未读提醒</TextLink>
