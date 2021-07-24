@@ -3,8 +3,8 @@ import LayoutMobile from '../components/mobile/layout/Layout'
 import UserWidget from '../widgets/UserWidget'
 import IndexTopicList from '../widgets/IndexTopicList'
 import IndexTopicListMobile from '../widgets/mobile/IndexTopicList'
-import { withDeviceDetection } from '../utils/ua'
 import NodeNav from '../widgets/NodeNav'
+import { withDeviceDetection } from '../utils/ua'
 
 import t from '../i18n/t'
 

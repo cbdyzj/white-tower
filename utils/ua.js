@@ -1,4 +1,4 @@
-export function detectMobileDevice(ua = '') {
+function detectMobileDevice(ua = '') {
     if (!ua) {
         return false
     }

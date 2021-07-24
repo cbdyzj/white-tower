@@ -1,7 +1,7 @@
 import styled from 'styled-components'
+import Demo from '../components/Demo'
 import Head from 'next/head'
 import Avatar from '../components/Avatar'
-import Demo from '../components/Demo'
 import Pagination from '../components/Pagination'
 import PaginationMobile from '../components/mobile/Pagination'
 import ContrastButton from '../components/ContrastButton'
@@ -20,15 +20,14 @@ import UnreadReminder, { NoUnread } from '../components/UnreadReminder'
 import TopicTitleInput from '../components/TopicTitleInput'
 import TopicContentInput from '../components/TopicContentInput'
 import TopicReplyEmpty from '../components/TopicReplyEmpty'
-import { detectMobileDevice } from '../utils/ua'
 import TopicReplyListItemMobile from '../components/mobile/TopicReplyListItem'
 import TopicReplyListItem from '../components/TopicReplyListItem'
+import TinyButton from '../components/TinyButton'
 import UserWidget from '../widgets/UserWidget'
 
 import topic_list from '../__test_data/topic_list'
 import topic_1 from '../__test_data/topic_1'
 import user_data from '../__test_data/user_data'
-import TinyButton from '../components/TinyButton'
 
 const _ComponentGallery = styled.div`
   min-height: 100vh;

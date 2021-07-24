@@ -47,7 +47,7 @@ export default function IndexTopicList(props) {
                 )}
             </div>
             <div className="foot text-sm top-border text-right">
-                <TextLink>更多&nbsp;»</TextLink>
+                <TextLink href={'/recent'}>更多&nbsp;»</TextLink>
             </div>
         </_IndexTopicList>
     )

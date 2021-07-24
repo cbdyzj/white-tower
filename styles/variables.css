@@ -3,4 +3,5 @@
 :root {
     --widget-padding: 10px;
     --widget-padding-sm: 5px;
+    --widget-rounded: 0.125rem;;
 }
