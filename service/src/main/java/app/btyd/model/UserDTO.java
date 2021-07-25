@@ -7,6 +7,7 @@ public class UserDTO {
     private Integer id;
     private String username;
     private String email;
+    private String avatarUrl;
     private Date lastActiveTime;
     private Date creationTime;
 
@@ -48,5 +49,13 @@ public class UserDTO {
 
     public void setCreationTime(Date creationTime) {
         this.creationTime = creationTime;
+    }
+
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
     }
 }

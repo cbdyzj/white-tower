@@ -7,6 +7,7 @@ public class User {
     private Integer id;
     private String username;
     private String email;
+    private String avatarUrl;
     private Timestamp lastActiveTime;
     private Timestamp creationTime;
 
@@ -48,5 +49,13 @@ public class User {
 
     public void setCreationTime(Timestamp creationTime) {
         this.creationTime = creationTime;
+    }
+
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
     }
 }

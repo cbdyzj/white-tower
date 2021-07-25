@@ -33,6 +33,7 @@ public class UserService {
         userDTO.setId(user.getId());
         userDTO.setUsername(user.getUsername());
         userDTO.setEmail(user.getEmail());
+        userDTO.setAvatarUrl(user.getAvatarUrl());
         userDTO.setLastActiveTime(user.getLastActiveTime());
         userDTO.setCreationTime(user.getCreationTime());
         return userDTO;
