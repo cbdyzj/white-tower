@@ -29,13 +29,13 @@ public class UserService {
     }
 
     private static UserDTO mapToUserDTO(User user) {
-        var userDTO = new UserDTO();
-        userDTO.setId(user.getId());
-        userDTO.setUsername(user.getUsername());
-        userDTO.setEmail(user.getEmail());
-        userDTO.setAvatarUrl(user.getAvatarUrl());
-        userDTO.setLastActiveTime(user.getLastActiveTime());
-        userDTO.setCreationTime(user.getCreationTime());
-        return userDTO;
+        return new UserDTO(
+                user.id(),
+                user.username(),
+                user.email(),
+                user.avatarUrl(),
+                user.lastActiveTime(),
+                user.creationTime()
+        );
     }
 }

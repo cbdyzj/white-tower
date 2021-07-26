@@ -1,7 +1,7 @@
 package app.btyd.repository;
 
 import app.btyd.entity.User;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.DataClassRowMapper;
 import org.springframework.jdbc.core.SingleColumnRowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -28,7 +28,7 @@ public class UserRepository {
                 LIMIT :limit OFFSET :offset;
                 """;
         var paramMap = Map.of("limit", limit, "offset", offset);
-        var rowMapper = BeanPropertyRowMapper.newInstance(User.class);
+        var rowMapper = DataClassRowMapper.newInstance(User.class);
         return this.jdbcTemplate.query(slim(sql), paramMap, rowMapper);
     }
 

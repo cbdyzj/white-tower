@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS t_node
+(
+    id   SERIAL PRIMARY KEY,
+    code VARCHAR,
+    name VARCHAR
+);
