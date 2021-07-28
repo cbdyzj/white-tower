@@ -6,5 +6,7 @@ CREATE TABLE IF NOT EXISTS t_notification
     topic_id        INTEGER,
     trigger_user_id INTEGER,
     unread          BOOLEAN     DEFAULT TRUE,
-    triggerTime     TIMESTAMPTZ DEFAULT NOW()
+    trigger_time    TIMESTAMPTZ DEFAULT NOW()
 );
+
+CREATE INDEX user_id_index ON t_notification (user_id);

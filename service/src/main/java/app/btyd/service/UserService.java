@@ -1,6 +1,7 @@
 package app.btyd.service;
 
 import app.btyd.entity.User;
+import app.btyd.model.LimitQuery;
 import app.btyd.model.UserDTO;
 import app.btyd.repository.UserRepository;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,8 @@ public class UserService {
     public List<UserDTO> getUserList(Integer pageIndex, Integer pageSize) {
         Objects.requireNonNull(pageIndex);
         Objects.requireNonNull(pageSize);
-        var userList = this.userRepository.selectUserList(pageSize, (pageIndex - 1) * pageSize);
+        var limitQuery = new LimitQuery(pageSize, (pageIndex - 1) * pageSize);
+        var userList = this.userRepository.selectUserList(limitQuery);
         return userList.stream().map(UserService::mapToUserDTO).toList();
     }
 
