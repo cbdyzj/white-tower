@@ -34,7 +34,7 @@ public class NotificationRepository {
                 "limit", lq.limit(),
                 "offset", lq.offset()
         );
-        var rowMapper = DataClassRowMapper.newInstance(Notification.class);
+        var rowMapper = new DataClassRowMapper<>(Notification.class);
         return this.jdbcTemplate.query(slim(sql), paramMap, rowMapper);
     }
 
@@ -44,7 +44,7 @@ public class NotificationRepository {
                 FROM t_notification
                 WHERE unread = TRUE;
                 """;
-        var rowMapper = SingleColumnRowMapper.newInstance(Integer.class);
+        var rowMapper = new SingleColumnRowMapper<>(Integer.class);
         var count = this.jdbcTemplate.query(slim(sql), rowMapper);
         Assert.notEmpty(count, "Illegal count select result");
         return count.get(0);

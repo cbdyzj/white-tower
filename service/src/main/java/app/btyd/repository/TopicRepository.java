@@ -2,11 +2,13 @@ package app.btyd.repository;
 
 import app.btyd.entity.Topic;
 import app.btyd.model.LimitQuery;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.springframework.jdbc.core.DataClassRowMapper;
 import org.springframework.jdbc.core.SingleColumnRowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
-import org.springframework.util.Assert;
+import org.springframework.util.CollectionUtils;
 
 import java.util.List;
 import java.util.Map;
@@ -22,14 +24,26 @@ public class TopicRepository {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public List<Topic> selectTopicList(LimitQuery lq) {
+    public @Nullable Topic selectTopic(Integer id) {
+        var sql = """
+                SELECT id, node_id, post_user_id, title, content, post_time, updated_time
+                FROM t_topic
+                WHERE id = :id;
+                """;
+        var paramMap = Map.of("id", id);
+        var rowMapper = new DataClassRowMapper<>(Topic.class);
+        var topicList = this.jdbcTemplate.query(slim(sql), paramMap, rowMapper);
+        return CollectionUtils.firstElement(topicList);
+    }
+
+    public @NotNull List<Topic> selectTopicList(LimitQuery lq) {
         var sql = """
                 SELECT id, node_id, post_user_id, title, content, post_time, updated_time
                 FROM t_topic
                 LIMIT :limit OFFSET :offset;
                 """;
         var paramMap = Map.of("limit", lq.limit(), "offset", lq.offset());
-        var rowMapper = DataClassRowMapper.newInstance(Topic.class);
+        var rowMapper = new DataClassRowMapper<>(Topic.class);
         return this.jdbcTemplate.query(slim(sql), paramMap, rowMapper);
     }
 
@@ -38,9 +52,8 @@ public class TopicRepository {
                 SELECT COUNT(*)
                 FROM t_topic;
                 """;
-        var rowMapper = SingleColumnRowMapper.newInstance(Integer.class);
+        var rowMapper = new SingleColumnRowMapper<>(Integer.class);
         var count = this.jdbcTemplate.query(slim(sql), rowMapper);
-        Assert.notEmpty(count, "Illegal count select result");
-        return count.get(0);
+        return CollectionUtils.firstElement(count);
     }
 }
