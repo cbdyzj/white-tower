@@ -3,7 +3,7 @@ package app.btyd.model;
 import java.util.Date;
 import java.util.List;
 
-public record TopicDTO(
+public record Topic(
         Integer id,
         String title,
         String content,
@@ -15,6 +15,6 @@ public record TopicDTO(
         Date updatedTime,
         Integer replyCount,
         Integer replyPage,
-        List<TopicReplyDTO> replyList
+        List<TopicReply> replyList
 ) {
 }

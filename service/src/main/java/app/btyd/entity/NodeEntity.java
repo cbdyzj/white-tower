@@ -1,6 +1,6 @@
 package app.btyd.entity;
 
-public record Node(
+public record NodeEntity(
         Integer id,
         String code,
         String name

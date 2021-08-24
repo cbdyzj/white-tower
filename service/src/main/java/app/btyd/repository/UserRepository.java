@@ -1,6 +1,6 @@
 package app.btyd.repository;
 
-import app.btyd.entity.User;
+import app.btyd.entity.UserEntity;
 import app.btyd.model.LimitQuery;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -24,26 +24,26 @@ public class UserRepository {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public @Nullable User selectUser(Integer id) {
+    public @Nullable UserEntity selectUser(Integer id) {
         var sql = """
                 SELECT id, username, email, avatar_url, last_active_time, creation_time
                 FROM t_user
                 WHERE id = :id;
                 """;
         var paramMap = Map.of("id", id);
-        var rowMapper = new DataClassRowMapper<>(User.class);
+        var rowMapper = new DataClassRowMapper<>(UserEntity.class);
         var userList = this.jdbcTemplate.query(slim(sql), paramMap, rowMapper);
         return CollectionUtils.firstElement(userList);
     }
 
-    public @NotNull List<User> selectUserList(LimitQuery lq) {
+    public @NotNull List<UserEntity> selectUserList(LimitQuery lq) {
         var sql = """
                 SELECT id, username, email, avatar_url, last_active_time, creation_time
                 FROM t_user
                 LIMIT :limit OFFSET :offset;
                 """;
         var paramMap = Map.of("limit", lq.limit(), "offset", lq.offset());
-        var rowMapper = new DataClassRowMapper<>(User.class);
+        var rowMapper = new DataClassRowMapper<>(UserEntity.class);
         return this.jdbcTemplate.query(slim(sql), paramMap, rowMapper);
     }
 

@@ -2,7 +2,7 @@ package app.btyd.entity;
 
 import java.sql.Timestamp;
 
-public record User(
+public record UserEntity(
         Integer id,
         String username,
         String email,

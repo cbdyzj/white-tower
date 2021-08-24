@@ -2,7 +2,7 @@ package app.btyd.model;
 
 import java.util.Date;
 
-public record TopicListItemDTO(
+public record TopicListItem(
         Integer id,
         String title,
         String nodeCode,

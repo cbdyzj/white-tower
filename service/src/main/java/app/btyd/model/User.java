@@ -2,7 +2,7 @@ package app.btyd.model;
 
 import java.util.Date;
 
-public record UserDTO(
+public record User(
         Integer id,
         String username,
         String email,

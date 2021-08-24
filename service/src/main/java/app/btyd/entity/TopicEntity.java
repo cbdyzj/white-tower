@@ -2,7 +2,7 @@ package app.btyd.entity;
 
 import java.sql.Timestamp;
 
-public record Topic(
+public record TopicEntity(
         Integer id,
         Integer nodeId,
         Integer postUserId,

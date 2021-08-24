@@ -2,7 +2,7 @@ package app.btyd.entity;
 
 import java.sql.Timestamp;
 
-public record Notification(
+public record NotificationEntity(
         Integer id,
         String type,
         Integer userId,

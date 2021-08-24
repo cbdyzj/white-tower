@@ -1,6 +1,6 @@
 package app.btyd.repository;
 
-import app.btyd.entity.Node;
+import app.btyd.entity.NodeEntity;
 import org.springframework.jdbc.core.DataClassRowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -18,12 +18,12 @@ public class NodeRepository {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public List<Node> selectNodeList() {
+    public List<NodeEntity> selectNodeList() {
         var sql = """
                 SELECT id, code, name
                 FROM t_node;
                 """;
-        var rowMapper = new DataClassRowMapper<>(Node.class);
+        var rowMapper = new DataClassRowMapper<>(NodeEntity.class);
         return this.jdbcTemplate.query(slim(sql), rowMapper);
     }
 }

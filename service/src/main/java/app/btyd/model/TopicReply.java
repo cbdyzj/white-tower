@@ -1,6 +1,6 @@
 package app.btyd.model;
 
-public record TopicReplyDTO(
+public record TopicReply(
         Integer id,
         String replyUser,
         String replyUserAvatarUrl,
