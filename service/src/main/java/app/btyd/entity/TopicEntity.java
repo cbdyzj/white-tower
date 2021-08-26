@@ -1,5 +1,7 @@
 package app.btyd.entity;
 
+import lombok.Builder;
+
 import java.sql.Timestamp;
 
 public record TopicEntity(
@@ -11,4 +13,8 @@ public record TopicEntity(
         Timestamp postTime,
         Timestamp updatedTime
 ) {
+
+    @Builder
+    public TopicEntity {
+    }
 }

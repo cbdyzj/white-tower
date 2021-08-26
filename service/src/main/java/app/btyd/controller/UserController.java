@@ -22,8 +22,8 @@ public class UserController {
     @GetMapping("/list")
     public ResponseEntity<?> getUserList(@RequestParam(name = "pageIndex", defaultValue = "1") Integer pageIndex,
                                          @RequestParam(name = "pageSize", defaultValue = "20") Integer pageSize) {
-        var userList = this.userService.getUserList(pageIndex, pageSize);
+        var userDTOList = this.userService.getUserList(pageIndex, pageSize);
         var userCount = this.userService.getUserCount();
-        return ResponseEntity.ok(Result.of(Page.of(userList, userCount)));
+        return ResponseEntity.ok(Result.of(Page.of(userDTOList, userCount)));
     }
 }

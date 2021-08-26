@@ -1,7 +1,7 @@
 package app.btyd.repository;
 
 import app.btyd.entity.NotificationEntity;
-import app.btyd.model.LimitQuery;
+import app.btyd.common.LimitQuery;
 import org.springframework.jdbc.core.DataClassRowMapper;
 import org.springframework.jdbc.core.SingleColumnRowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;

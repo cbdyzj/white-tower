@@ -1,7 +1,7 @@
 package app.btyd.controller;
 
 import app.btyd.common.Result;
-import app.btyd.model.TopicCreation;
+import app.btyd.dto.TopicCreateDTO;
 import app.btyd.service.TopicService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,15 +16,22 @@ public class TopicController {
         this.topicService = topicService;
     }
 
+    @GetMapping
+    public ResponseEntity<?> getTopic(@RequestParam("id") Integer id) {
+        var topicDTO = this.topicService.getTopic(id);
+        return ResponseEntity.ok(Result.of(topicDTO));
+    }
+
     @GetMapping("/list")
     public ResponseEntity<?> getTopicList(@RequestParam(name = "pageIndex", defaultValue = "1") Integer pageIndex,
                                           @RequestParam(name = "pageSize", defaultValue = "20") Integer pageSize) {
-        var topicList = this.topicService.getTopicItemList(pageIndex, pageSize);
-        return ResponseEntity.ok(Result.of(topicList));
+        var topicItemDTOList = this.topicService.getTopicItemList(pageIndex, pageSize);
+        this.topicService.getTopicItemList(pageIndex, pageSize);
+        return ResponseEntity.ok(Result.of(topicItemDTOList));
     }
 
     @PostMapping("/create")
-    public ResponseEntity<?> createTopic(@RequestBody TopicCreation topicCreateDTO) {
+    public ResponseEntity<?> createTopic(@RequestBody TopicCreateDTO topicCreateDTO) {
         var topicDTO = this.topicService.createTopic(topicCreateDTO);
         return ResponseEntity.ok(Result.of(topicDTO));
     }

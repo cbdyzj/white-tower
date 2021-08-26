@@ -1,9 +1,11 @@
-package app.btyd.model;
+package app.btyd.dto;
+
+import lombok.Builder;
 
 import java.util.Date;
 import java.util.List;
 
-public record Topic(
+public record TopicDTO(
         Integer id,
         String title,
         String content,
@@ -15,6 +17,10 @@ public record Topic(
         Date updatedTime,
         Integer replyCount,
         Integer replyPage,
-        List<TopicReply> replyList
+        List<TopicReplyDTO> replyList
 ) {
+
+    @Builder
+    public TopicDTO {
+    }
 }

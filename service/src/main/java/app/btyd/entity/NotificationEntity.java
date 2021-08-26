@@ -1,5 +1,7 @@
 package app.btyd.entity;
 
+import lombok.Builder;
+
 import java.sql.Timestamp;
 
 public record NotificationEntity(
@@ -13,4 +15,8 @@ public record NotificationEntity(
 ) {
     public static final String TYPE_REPLY = "REPLY";
     public static final String TYPE_FAVORITE = "FAVORITE";
+
+    @Builder
+    public NotificationEntity {
+    }
 }

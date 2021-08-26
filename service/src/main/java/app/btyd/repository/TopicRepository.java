@@ -1,7 +1,7 @@
 package app.btyd.repository;
 
 import app.btyd.entity.TopicEntity;
-import app.btyd.model.LimitQuery;
+import app.btyd.common.LimitQuery;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.springframework.jdbc.core.DataClassRowMapper;
@@ -60,16 +60,16 @@ public class TopicRepository {
         return CollectionUtils.firstElement(count);
     }
 
-    public Integer insertTopic(TopicEntity topicEntity) {
+    public Integer insertTopic(TopicEntity topic) {
         var sql = """
                 INSERT INTO t_topic (node_id, post_user_id, title, content)
                 VALUES (:nodeId, :postUserId, :title, :content);
                 """;
         var paramMap = Map.of(
-                "nodeId", topicEntity.nodeId(),
-                "postUserId", topicEntity.postUserId(),
-                "title", topicEntity.title(),
-                "content", topicEntity.content()
+                "nodeId", topic.nodeId(),
+                "postUserId", topic.postUserId(),
+                "title", topic.title(),
+                "content", topic.content()
         );
         var keyHolder = new GeneratedKeyHolder();
         this.jdbcTemplate.update(slim(sql), new MapSqlParameterSource(paramMap), keyHolder);

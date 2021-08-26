@@ -73,6 +73,14 @@ public abstract class Json {
         return invoke(() -> mapper.readValue(buf.array(), clazz));
     }
 
+    public static <T> T convertValue(Map<String, ?> map, Class<T> clazz) {
+        return invoke(() -> mapper.convertValue(map, clazz));
+    }
+
+    public static <T> T convertValue(Map<String, ?> map, TypeReference<T> type) {
+        return invoke(() -> mapper.convertValue(map, type));
+    }
+
     public static Map<String, ?> decodeValueAsMap(String str) {
         return decodeValue(str, STRING_OBJECT_MAP_TYPE);
     }

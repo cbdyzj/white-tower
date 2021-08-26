@@ -1,8 +1,10 @@
-package app.btyd.model;
+package app.btyd.dto;
+
+import lombok.Builder;
 
 import java.util.Date;
 
-public record User(
+public record UserDTO(
         Integer id,
         String username,
         String email,
@@ -10,4 +12,7 @@ public record User(
         Date lastActiveTime,
         Date creationTime
 ) {
+    @Builder
+    public UserDTO {
+    }
 }

@@ -1,10 +1,10 @@
 package app.btyd.service;
 
+import app.btyd.common.LimitQuery;
+import app.btyd.dto.TopicCreateDTO;
+import app.btyd.dto.TopicDTO;
+import app.btyd.dto.TopicItemDTO;
 import app.btyd.entity.TopicEntity;
-import app.btyd.model.LimitQuery;
-import app.btyd.model.TopicCreation;
-import app.btyd.model.Topic;
-import app.btyd.model.TopicListItem;
 import app.btyd.repository.TopicRepository;
 import org.springframework.stereotype.Service;
 
@@ -20,39 +20,39 @@ public class TopicService {
         this.topicRepository = topicRepository;
     }
 
-    public List<TopicListItem> getTopicItemList(Integer pageIndex, Integer pageSize) {
-        var limitQuery = new LimitQuery(pageSize, (pageIndex - 1) * pageSize);
-        var topicList = this.topicRepository.selectTopicList(limitQuery);
-        return topicList.stream().map(mapToTopicListItemDTO()).toList();
+    public List<TopicItemDTO> getTopicItemList(Integer pageIndex, Integer pageSize) {
+        var lq = new LimitQuery(pageSize, (pageIndex - 1) * pageSize);
+        var topicList = this.topicRepository.selectTopicList(lq);
+        return topicList.stream().map(mapToTopicItemDTO()).toList();
     }
 
-    public Topic createTopic(TopicCreation topicCreateDTO) {
-        var topic = new TopicEntity(
-                null,
-                0, 0,
-                topicCreateDTO.title(),
-                topicCreateDTO.content(),
-                null,
-                null
-        );
-        var topicId = topicRepository.insertTopic(topic);
-        return null;
+    public TopicDTO createTopic(TopicCreateDTO topicCreateDTO) {
+        var topic = TopicEntity.builder()
+                .nodeId(0)
+                .postUserId(0)
+                .title(topicCreateDTO.title())
+                .content(topicCreateDTO.content())
+                .build();
+        var topicId = this.topicRepository.insertTopic(topic);
+        return TopicDTO.builder()
+                .id(topicId)
+                .build();
     }
 
-    private static Function<TopicEntity, TopicListItem> mapToTopicListItemDTO() {
+    private static Function<TopicEntity, TopicItemDTO> mapToTopicItemDTO() {
         return (topic) -> {
             //
-            return new TopicListItem(
-                    topic.id(),
-                    topic.title(),
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    topic.updatedTime(),
-                    0
-            );
+            return TopicItemDTO.builder()
+                    .id(topic.id())
+                    .title(topic.title())
+                    .updatedTime(topic.updatedTime())
+                    .build();
         };
+    }
+
+    public TopicDTO getTopic(Integer id) {
+        return TopicDTO.builder()
+                .id(id)
+                .build();
     }
 }

@@ -9,12 +9,18 @@ group = 'app.btyd'
 sourceCompatibility = '16'
 targetCompatibility = '16'
 
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation 'org.jetbrains:annotations:21.0.1'
+    implementation 'org.jetbrains:annotations:22.0.0'
     // aop
     implementation 'org.aspectj:aspectjweaver:1.9.7'
     // postgresql
@@ -22,6 +28,9 @@ dependencies {
     // spring
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    // lombok
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
     // test
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

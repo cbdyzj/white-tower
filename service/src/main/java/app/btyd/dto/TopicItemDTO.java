@@ -1,8 +1,10 @@
-package app.btyd.model;
+package app.btyd.dto;
+
+import lombok.Builder;
 
 import java.util.Date;
 
-public record TopicListItem(
+public record TopicItemDTO(
         Integer id,
         String title,
         String nodeCode,
@@ -13,4 +15,7 @@ public record TopicListItem(
         Date updatedTime,
         Integer replyCount
 ) {
+    @Builder
+    public TopicItemDTO {
+    }
 }

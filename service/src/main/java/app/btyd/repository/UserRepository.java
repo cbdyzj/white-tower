@@ -1,7 +1,7 @@
 package app.btyd.repository;
 
 import app.btyd.entity.UserEntity;
-import app.btyd.model.LimitQuery;
+import app.btyd.common.LimitQuery;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.springframework.jdbc.core.DataClassRowMapper;

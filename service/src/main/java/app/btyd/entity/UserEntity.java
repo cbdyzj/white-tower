@@ -1,5 +1,7 @@
 package app.btyd.entity;
 
+import lombok.Builder;
+
 import java.sql.Timestamp;
 
 public record UserEntity(
@@ -10,4 +12,8 @@ public record UserEntity(
         Timestamp lastActiveTime,
         Timestamp creationTime
 ) {
+
+    @Builder
+    public UserEntity {
+    }
 }

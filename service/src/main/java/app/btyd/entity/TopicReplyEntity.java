@@ -1,5 +1,7 @@
 package app.btyd.entity;
 
+import lombok.Builder;
+
 import java.sql.Timestamp;
 
 public record TopicReplyEntity(
@@ -9,4 +11,8 @@ public record TopicReplyEntity(
         String replyContent,
         Timestamp replyTime
 ) {
+
+    @Builder
+    public TopicReplyEntity {
+    }
 }
