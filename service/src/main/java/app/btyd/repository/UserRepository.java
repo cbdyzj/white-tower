@@ -1,11 +1,12 @@
 package app.btyd.repository;
 
 import app.btyd.entity.UserEntity;
-import app.btyd.common.LimitQuery;
+import app.btyd.common.LimitOffset;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.springframework.jdbc.core.DataClassRowMapper;
 import org.springframework.jdbc.core.SingleColumnRowMapper;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.CollectionUtils;
@@ -36,15 +37,15 @@ public class UserRepository {
         return CollectionUtils.firstElement(userList);
     }
 
-    public @NotNull List<UserEntity> selectUserList(LimitQuery lq) {
+    public @NotNull List<UserEntity> selectUserList(LimitOffset limitOffset) {
         var sql = """
                 SELECT id, username, email, avatar_url, last_active_time, creation_time
                 FROM t_user
                 LIMIT :limit OFFSET :offset;
                 """;
-        var paramMap = Map.of("limit", lq.limit(), "offset", lq.offset());
+        var paramSource = new BeanPropertySqlParameterSource(LimitOffset.class);
         var rowMapper = new DataClassRowMapper<>(UserEntity.class);
-        return this.jdbcTemplate.query(slim(sql), paramMap, rowMapper);
+        return this.jdbcTemplate.query(slim(sql), paramSource, rowMapper);
     }
 
     public Integer selectUserCount() {

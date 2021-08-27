@@ -1,6 +1,6 @@
 package app.btyd.service;
 
-import app.btyd.common.LimitQuery;
+import app.btyd.common.LimitOffset;
 import app.btyd.dto.TopicCreateDTO;
 import app.btyd.dto.TopicDTO;
 import app.btyd.dto.TopicItemDTO;
@@ -21,8 +21,8 @@ public class TopicService {
     }
 
     public List<TopicItemDTO> getTopicItemList(Integer pageIndex, Integer pageSize) {
-        var lq = new LimitQuery(pageSize, (pageIndex - 1) * pageSize);
-        var topicList = this.topicRepository.selectTopicList(lq);
+        var limitOffset = new LimitOffset(pageSize, (pageIndex - 1) * pageSize);
+        var topicList = this.topicRepository.selectTopicList(limitOffset);
         return topicList.stream().map(mapToTopicItemDTO()).toList();
     }
 

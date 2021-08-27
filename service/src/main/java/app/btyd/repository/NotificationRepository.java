@@ -1,7 +1,7 @@
 package app.btyd.repository;
 
 import app.btyd.entity.NotificationEntity;
-import app.btyd.common.LimitQuery;
+import app.btyd.common.LimitOffset;
 import org.springframework.jdbc.core.DataClassRowMapper;
 import org.springframework.jdbc.core.SingleColumnRowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -22,7 +22,7 @@ public class NotificationRepository {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public List<NotificationEntity> selectNotificationList(Integer userId, LimitQuery lq) {
+    public List<NotificationEntity> selectNotificationList(Integer userId, LimitOffset limitOffset) {
         var sql = """
                 SELECT id, type, user_id, topic_id, trigger_user_id, unread, trigger_time
                 FROM t_notification
@@ -31,8 +31,8 @@ public class NotificationRepository {
                 """;
         var paramMap = Map.of(
                 "userId", userId,
-                "limit", lq.limit(),
-                "offset", lq.offset()
+                "limit", limitOffset.limit(),
+                "offset", limitOffset.offset()
         );
         var rowMapper = new DataClassRowMapper<>(NotificationEntity.class);
         return this.jdbcTemplate.query(slim(sql), paramMap, rowMapper);
