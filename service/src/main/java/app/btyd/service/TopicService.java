@@ -1,12 +1,14 @@
 package app.btyd.service;
 
 import app.btyd.common.LimitOffset;
-import app.btyd.dto.TopicCreateDTO;
+import app.btyd.dto.TopicCreationDTO;
 import app.btyd.dto.TopicDTO;
 import app.btyd.dto.TopicItemDTO;
 import app.btyd.entity.TopicEntity;
+import app.btyd.repository.NodeRepository;
 import app.btyd.repository.TopicRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.function.Function;
@@ -15,9 +17,11 @@ import java.util.function.Function;
 public class TopicService {
 
     private final TopicRepository topicRepository;
+    private final NodeRepository nodeRepository;
 
-    public TopicService(TopicRepository topicRepository) {
+    public TopicService(TopicRepository topicRepository, NodeRepository nodeRepository) {
         this.topicRepository = topicRepository;
+        this.nodeRepository = nodeRepository;
     }
 
     public List<TopicItemDTO> getTopicItemList(Integer pageIndex, Integer pageSize) {
@@ -26,16 +30,20 @@ public class TopicService {
         return topicList.stream().map(mapToTopicItemDTO()).toList();
     }
 
-    public TopicDTO createTopic(TopicCreateDTO topicCreateDTO) {
+    @Transactional
+    public TopicDTO createTopic(TopicCreationDTO creationDTO) {
+        var node = this.nodeRepository.selectNode(creationDTO.nodeCode());
         var topic = TopicEntity.builder()
-                .nodeId(0)
-                .postUserId(0)
-                .title(topicCreateDTO.title())
-                .content(topicCreateDTO.content())
+                .nodeId(node.id())
+                .postUserId(1)
+                .title(creationDTO.title())
+                .content(creationDTO.content())
                 .build();
         var topicId = this.topicRepository.insertTopic(topic);
         return TopicDTO.builder()
                 .id(topicId)
+                .title(creationDTO.title())
+                .content(creationDTO.content())
                 .build();
     }
 

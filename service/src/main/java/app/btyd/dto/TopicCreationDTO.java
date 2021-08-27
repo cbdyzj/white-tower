@@ -2,13 +2,13 @@ package app.btyd.dto;
 
 import lombok.Builder;
 
-public record TopicCreateDTO(
+public record TopicCreationDTO(
         String title,
         String content,
         String nodeCode
 ) {
 
     @Builder
-    public TopicCreateDTO {
+    public TopicCreationDTO {
     }
 }

@@ -1,7 +1,7 @@
 package app.btyd.controller;
 
 import app.btyd.common.Result;
-import app.btyd.dto.TopicCreateDTO;
+import app.btyd.dto.TopicCreationDTO;
 import app.btyd.service.TopicService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,7 +31,7 @@ public class TopicController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<?> createTopic(@RequestBody TopicCreateDTO topicCreateDTO) {
+    public ResponseEntity<?> createTopic(@RequestBody TopicCreationDTO topicCreateDTO) {
         var topicDTO = this.topicService.createTopic(topicCreateDTO);
         return ResponseEntity.ok(Result.of(topicDTO));
     }
