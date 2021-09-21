@@ -14,6 +14,11 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
     public boolean preHandle(@NotNull HttpServletRequest request,
                              @NotNull HttpServletResponse response,
                              @NotNull Object handler) {
+        var token = request.getHeader("X-Token");
+        return this.checkToken(token);
+    }
+
+    private boolean checkToken(String token) {
         return true;
     }
 }

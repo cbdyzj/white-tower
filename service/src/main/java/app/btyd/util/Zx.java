@@ -12,8 +12,12 @@ public abstract class Zx {
 
     public static @NotNull CompletableFuture<byte[]> $(@NotNull String @NotNull ... command) {
         try {
-            var process = new ProcessBuilder().command(command).redirectErrorStream(true).start();
-            return process.onExit().thenApply(it -> readAllBytes(it::getInputStream));
+            var process = new ProcessBuilder()
+                    .command(command)
+                    .redirectErrorStream(true)
+                    .start();
+            return process.onExit()
+                    .thenApply(it -> readAllBytes(it::getInputStream));
         } catch (IOException ex) {
             throw new UncheckedIOException(ex);
         }
